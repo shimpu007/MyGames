@@ -23,28 +23,7 @@ button:hover {background:#0056b3;}
 <h1>🎲 Moja kolekcja gier</h1>
 <div class='container'>
 
-  <!-- GRA: Catan -->
-  <div class='card'>
-    <img src='https://cf.geekdo-images.com/0XODRpReiZBFUffEcqT5-Q__itemrep/img/6Jf5G-bSvdOIMUSwxsJfZXl29B8=/fit-in/246x300/filters:strip_icc()/pic9156909.png'>
-    <h3>Catan</h3>
-    <div class='details'>
-      <!-- Szczegóły będą na kartach CSV -->
-    </div>
-    <button onclick="openModal('catan')">Skrót zasad</button>
-  </div>
-
-
-  <!-- GRA: Carcassonne -->
-  <div class='card'>
-    <img src='https://cf.geekdo-images.com/peUgu3A20LRmAXAMyDQfpQ__itemrep/img/6TWoEvnQQe_sO--6WLd_PQOnEQg=/fit-in/246x300/filters:strip_icc()/pic8621446.jpg'>
-    <h3>Carcassonne</h3>
-    <div class='details'>
-      <!-- Szczegóły będą na kartach CSV -->
-    </div>
-    <button onclick="openModal('carcassonne')">Skrót zasad</button>
-  </div>
-
-
+  
   <!-- AUTO: 5-Minute Dungeon -->
   <div class='card'>
     <img src='https://cf.geekdo-images.com/bFZKvxPJ23dzGwgpOg-mIA__itemrep/img/lw4_8FyLy-hS3kYLBGUv29LAiRw=/fit-in/246x300/filters:strip_icc()/pic3213622.png' alt='5-Minute Dungeon'>
@@ -1206,24 +1185,6 @@ button:hover {background:#0056b3;}
   </div>
 
 </div>
-
-<div id='modal-catan' class='modal'>
-  <div class='modal-content'>
-    <span class='close' onclick="closeModal('catan')">&times;</span>
-    <h3>Catan – Skrót zasad</h3>
-    <p><b>Jak rozłożyć grę</b><br>– Złóż ramkę morza i ułóż 19 heksów; rozłóż żetony liczb; rozbójnik na pustyni.<br>– Każdy kładzie 2 osady i 2 drogi (kolejność węża); po drugiej osadzie dobiera surowce.</p><p><b>Jak grać</b><br>Rzut 2 kośćmi → produkcja; handel (z graczami/portami); budowa dróg, osad, miast; karty rozwoju. Przy 7 przesuwasz rozbójnika.</p><p><b>Koniec</b><br>Pierwszy do <b>10 PZ</b> (budowle, karty VP, Najdłuższa Droga, Największa Armia).</p>
-  </div>
-</div>
-
-
-<div id='modal-carcassonne' class='modal'>
-  <div class='modal-content'>
-    <span class='close' onclick="closeModal('carcassonne')">&times;</span>
-    <h3>Carcassonne – Skrót zasad</h3>
-    <p><b>Jak rozłożyć grę</b><br>– Płytka startowa; potasuj resztę; każdy 7 meepli i pion na tor.</p><p><b>Jak grać</b><br>Dobierz i dołóż płytkę (krawędzie muszą pasować) → opcjonalnie postaw meepla → jeśli ukończysz drogę/miasto/klasztor, punktuj i zdejmij meeple.</p><p><b>Koniec</b><br>Po wyczerpaniu płytek podlicz niedokończone obszary (i pola, jeśli gracie). Najwięcej PZ wygrywa.</p>
-  </div>
-</div>
-
 
 <div id='modal-5-minute-dungeon' class='modal'>
   <div class='modal-content'>
