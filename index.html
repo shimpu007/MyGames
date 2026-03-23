@@ -27,20 +27,34 @@ h1 {
   padding: 10px;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
 .card img {
   width: 100%;
-  height: 100px;
-  object-fit: contain;  /* zdjęcie dopasowuje się w całości */
-  background: #eee;     /* kolor tła jeśli obrazek nie wypełnia boxu */
+  height: 200px;
+  object-fit: cover;
   border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .details {
-  display: none;
-  margin-top: 10px;
   font-size: 14px;
+  margin-top: 5px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
 }
 </style>
 </head>
@@ -52,41 +66,30 @@ h1 {
 <div class="container">
 
   <!-- GRA 1 -->
-  <div class="card" onclick="toggle(this)">
-    <img src="https://cf.geekdo-images.com/0XODRpReiZBFUffEcqT5-Q__itemrep/img/6Jf5G-bSvdOIMUSwxsJfZXl29B8=/fit-in/246x300/filters:strip_icc()/pic9156909.png">
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/b0/Catan-2015-boxart.jpg">
     <h3>Catan</h3>
-
     <div class="details">
       👥 Gracze: 3–4<br>
       ⏱️ Czas: 60–90 min<br>
-      🎂 Wiek: 10+<br><br>
-      📝 Skrót zasad:<br>
-      Buduj osady, zbieraj surowce i handluj.
+      🎂 Wiek: 10+
     </div>
+    <button onclick="window.open('https://example.com/catan-instructions', '_blank')">Skrót zasad</button>
   </div>
 
   <!-- GRA 2 -->
-  <div class="card" onclick="toggle(this)">
-    <img src="https://cf.geekdo-images.com/peUgu3A20LRmAXAMyDQfpQ__itemrep/img/6TWoEvnQQe_sO--6WLd_PQOnEQg=/fit-in/246x300/filters:strip_icc()/pic8621446.jpg">
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/en/7/70/Carcassonne-game.jpg">
     <h3>Carcassonne</h3>
-
     <div class="details">
       👥 Gracze: 2–5<br>
       ⏱️ Czas: 30–45 min<br>
-      🎂 Wiek: 7+<br><br>
-      📝 Skrót zasad:<br>
-      Układaj kafelki i zdobywaj punkty.
+      🎂 Wiek: 7+
     </div>
+    <button onclick="window.open('https://example.com/carcassonne-instructions', '_blank')">Skrót zasad</button>
   </div>
 
 </div>
-
-<script>
-function toggle(card) {
-  let details = card.querySelector(".details");
-  details.style.display = details.style.display === "block" ? "none" : "block";
-}
-</script>
 
 </body>
 </html>
