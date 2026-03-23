@@ -1,14 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
-  <title>Moja kolekcja gier</title>
+<meta charset="UTF-8">
+<title>Moja kolekcja gier</title>
+
+<style>
+body {
+  font-family: Arial;
+  background: #f4f4f4;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.details {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+}
+</style>
 </head>
+
 <body>
-  <h1>🎲 Moja kolekcja gier planszowych</h1>
-  <ul>
-    <li>Catan</li>
-    <li>Carcassonne</li>
-    <li>Monopoly</li>
-  </ul>
+
+<h1>🎲 Moja kolekcja gier</h1>
+
+<div class="container">
+
+  <!-- GRA 1 -->
+  <div class="card" onclick="toggle(this)">
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/b0/Catan-2015-boxart.jpg">
+    <h3>Catan</h3>
+
+    <div class="details">
+      👥 Gracze: 3–4<br>
+      ⏱️ Czas: 60–90 min<br>
+      🎂 Wiek: 10+<br><br>
+      📝 Skrót zasad:<br>
+      Buduj osady, zbieraj surowce i handluj.
+    </div>
+  </div>
+
+  <!-- GRA 2 -->
+  <div class="card" onclick="toggle(this)">
+    <img src="https://upload.wikimedia.org/wikipedia/en/7/70/Carcassonne-game.jpg">
+    <h3>Carcassonne</h3>
+
+    <div class="details">
+      👥 Gracze: 2–5<br>
+      ⏱️ Czas: 30–45 min<br>
+      🎂 Wiek: 7+<br><br>
+      📝 Skrót zasad:<br>
+      Układaj kafelki i zdobywaj punkty.
+    </div>
+  </div>
+
+</div>
+
+<script>
+function toggle(card) {
+  let details = card.querySelector(".details");
+  details.style.display = details.style.display === "block" ? "none" : "block";
+}
+</script>
+
 </body>
 </html>
