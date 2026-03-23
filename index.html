@@ -1,2999 +1,2394 @@
 
 <!DOCTYPE html>
-<html lang="pl">
+<html lang='pl'>
 <head>
-<meta charset="UTF-8">
+<meta charset='UTF-8'>
 <title>Moja kolekcja gier</title>
 <style>
-body {
-  font-family: Arial;
-  background: #f4f4f4;
-  padding: 20px;
-}
-
-h1 {
-  text-align: center;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: white;
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.details {
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-button {
-  margin-top: 10px;
-  padding: 5px 10px;
-  border: none;
-  background: #007bff;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #0056b3;
-}
-
-/* Popup modal */
-.modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1000; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgba(0,0,0,0.5); 
-}
-
-.modal-content {
-  background-color: white;
-  margin: 10% auto; 
-  padding: 20px;
-  border-radius: 10px;
-  width: 80%;
-  max-width: 400px;
-  text-align: left;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover {
-  color: black;
-}
+body {font-family: Arial;background:#f4f4f4;padding:20px;}
+h1 {text-align:center;}
+.container {display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px;}
+.card {background:white;border-radius:10px;padding:10px;box-shadow:0 0 10px rgba(0,0,0,0.1);text-align:center;}
+.card img {width:100%;height:200px;object-fit:cover;border-radius:10px;margin-bottom:10px;}
+.details {font-size:14px;margin-top:5px;}
+button {margin-top:10px;padding:5px 10px;border:none;background:#007bff;color:white;border-radius:5px;cursor:pointer;}
+button:hover {background:#0056b3;}
+.modal {display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.5);} 
+.modal-content {background:#fff;margin:10% auto;padding:20px;border-radius:10px;width:80%;max-width:480px;text-align:left;box-shadow:0 5px 15px rgba(0,0,0,0.3);} 
+.close {float:right;font-size:24px;cursor:pointer;}
+.modal-content p {margin:0 0 10px 0;}
 </style>
 </head>
 <body>
 <h1>🎲 Moja kolekcja gier</h1>
+<div class='container'>
 
-<div class="container">
-
-  <!-- GRA 1 -->
-  <div class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/en/b/b0/Catan-2015-boxart.jpg">
+  <!-- GRA: Catan -->
+  <div class='card'>
+    <img src='https://upload.wikimedia.org/wikipedia/en/b/b0/Catan-2015-boxart.jpg'>
     <h3>Catan</h3>
-    <div class="details">
-      👥 Gracze: 3–4<br>
-      ⏱️ Czas: 60–90 min<br>
-      🎂 Wiek: 10+
+    <div class='details'>
+      <!-- Szczegóły będą na kartach CSV -->
     </div>
     <button onclick="openModal('catan')">Skrót zasad</button>
   </div>
 
-  <!-- GRA 2 -->
-  <div class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/en/7/70/Carcassonne-game.jpg">
+
+  <!-- GRA: Carcassonne -->
+  <div class='card'>
+    <img src='https://upload.wikimedia.org/wikipedia/en/7/70/Carcassonne-game.jpg'>
     <h3>Carcassonne</h3>
-    <div class="details">
-      👥 Gracze: 2–5<br>
-      ⏱️ Czas: 30–45 min<br>
-      🎂 Wiek: 7+
+    <div class='details'>
+      <!-- Szczegóły będą na kartach CSV -->
     </div>
     <button onclick="openModal('carcassonne')">Skrót zasad</button>
   </div>
 
-  <!-- GRA 3 (ZASTĄPIONA LISTĄ Z CSV) -->
 
   <!-- AUTO: 5-Minute Dungeon -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=5-Minute%20Dungeon" alt="5-Minute Dungeon"> 
-    <h3>5-Minute Dungeon</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–5<br> 
-      ⏱️ Czas: 5–30 min<br> 
-      🎂 Wiek: 6+ 
-    </div> 
-    <button onclick="openModal('5-minute-dungeon')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=5-Minute%20Dungeon' alt='5-Minute Dungeon'>
+    <h3>5-Minute Dungeon</h3>
+    <div class='details'>👥 Gracze: 2–5<br>⏱️ Czas: 5–30 min<br>🎂 Wiek: 6+</div>
+    <button onclick="openModal('5-minute-dungeon')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: 51st State: Master Set -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=51st%20State%3A%20Master%20Set" alt="51st State: Master Set"> 
-    <h3>51st State: Master Set</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 60–90 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('51st-state--master-set')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=51st%20State%3A%20Master%20Set' alt='51st State: Master Set'>
+    <h3>51st State: Master Set</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 60–90 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('51st-state--master-set')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: 51st State: Master Set – Allies -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=51st%20State%3A%20Master%20Set%20%E2%80%93%20Allies" alt="51st State: Master Set – Allies"> 
-    <h3>51st State: Master Set – Allies</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 60–90 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('51st-state--master-set---allies')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=51st%20State%3A%20Master%20Set%20%E2%80%93%20Allies' alt='51st State: Master Set – Allies'>
+    <h3>51st State: Master Set – Allies</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 60–90 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('51st-state--master-set---allies')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: 51st State: Master Set – Scavengers -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=51st%20State%3A%20Master%20Set%20%E2%80%93%20Scavengers" alt="51st State: Master Set – Scavengers"> 
-    <h3>51st State: Master Set – Scavengers</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 60–90 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('51st-state--master-set---scavengers')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=51st%20State%3A%20Master%20Set%20%E2%80%93%20Scavengers' alt='51st State: Master Set – Scavengers'>
+    <h3>51st State: Master Set – Scavengers</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 60–90 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('51st-state--master-set---scavengers')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: 7 Wonders Duel -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=7%20Wonders%20Duel" alt="7 Wonders Duel"> 
-    <h3>7 Wonders Duel</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–2<br> 
-      ⏱️ Czas: 30–30 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('7-wonders-duel')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=7%20Wonders%20Duel' alt='7 Wonders Duel'>
+    <h3>7 Wonders Duel</h3>
+    <div class='details'>👥 Gracze: 2–2<br>⏱️ Czas: 30–30 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('7-wonders-duel')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: The 7th Continent -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=The%207th%20Continent" alt="The 7th Continent"> 
-    <h3>The 7th Continent</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 5–1000 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('the-7th-continent')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=The%207th%20Continent' alt='The 7th Continent'>
+    <h3>The 7th Continent</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 5–1000 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('the-7th-continent')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Abomination: The Heir of Frankenstein -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Abomination%3A%20The%20Heir%20of%20Frankenstein" alt="Abomination: The Heir of Frankenstein"> 
-    <h3>Abomination: The Heir of Frankenstein</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 90–180 min<br> 
-      🎂 Wiek: 14+ 
-    </div> 
-    <button onclick="openModal('abomination--the-heir-of-frankenstein')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Abomination%3A%20The%20Heir%20of%20Frankenstein' alt='Abomination: The Heir of Frankenstein'>
+    <h3>Abomination: The Heir of Frankenstein</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 90–180 min<br>🎂 Wiek: 14+</div>
+    <button onclick="openModal('abomination--the-heir-of-frankenstein')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Aeon&#x27;s End: The Outer Dark -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Aeon%27s%20End%3A%20The%20Outer%20Dark" alt="Aeon&#x27;s End: The Outer Dark"> 
-    <h3>Aeon&#x27;s End: The Outer Dark</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 60–60 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('aeon-s-end--the-outer-dark')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Aeon%27s%20End%3A%20The%20Outer%20Dark' alt='Aeon&#x27;s End: The Outer Dark'>
+    <h3>Aeon&#x27;s End: The Outer Dark</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 60–60 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('aeon-s-end--the-outer-dark')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Aeon&#x27;s End: War Eternal -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Aeon%27s%20End%3A%20War%20Eternal" alt="Aeon&#x27;s End: War Eternal"> 
-    <h3>Aeon&#x27;s End: War Eternal</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 60–60 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('aeon-s-end--war-eternal')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Aeon%27s%20End%3A%20War%20Eternal' alt='Aeon&#x27;s End: War Eternal'>
+    <h3>Aeon&#x27;s End: War Eternal</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 60–60 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('aeon-s-end--war-eternal')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Agricola -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Agricola" alt="Agricola"> 
-    <h3>Agricola</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–5<br> 
-      ⏱️ Czas: 30–150 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('agricola')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Agricola' alt='Agricola'>
+    <h3>Agricola</h3>
+    <div class='details'>👥 Gracze: 1–5<br>⏱️ Czas: 30–150 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('agricola')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Arkham Horror -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Arkham%20Horror" alt="Arkham Horror"> 
-    <h3>Arkham Horror</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–8<br> 
-      ⏱️ Czas: 120–240 min<br> 
-      🎂 Wiek: 14+ 
-    </div> 
-    <button onclick="openModal('arkham-horror')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Arkham%20Horror' alt='Arkham Horror'>
+    <h3>Arkham Horror</h3>
+    <div class='details'>👥 Gracze: 1–8<br>⏱️ Czas: 120–240 min<br>🎂 Wiek: 14+</div>
+    <button onclick="openModal('arkham-horror')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Arkham Horror: Dunwich Horror Expansion -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Arkham%20Horror%3A%20Dunwich%20Horror%20Expansion" alt="Arkham Horror: Dunwich Horror Expansion"> 
-    <h3>Arkham Horror: Dunwich Horror Expansion</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–8<br> 
-      ⏱️ Czas: 240–240 min<br> 
-      🎂 Wiek: 14+ 
-    </div> 
-    <button onclick="openModal('arkham-horror--dunwich-horror-expansion')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Arkham%20Horror%3A%20Dunwich%20Horror%20Expansion' alt='Arkham Horror: Dunwich Horror Expansion'>
+    <h3>Arkham Horror: Dunwich Horror Expansion</h3>
+    <div class='details'>👥 Gracze: 1–8<br>⏱️ Czas: 240–240 min<br>🎂 Wiek: 14+</div>
+    <button onclick="openModal('arkham-horror--dunwich-horror-expansion')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Arkham Horror: The Card Game -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Arkham%20Horror%3A%20The%20Card%20Game" alt="Arkham Horror: The Card Game"> 
-    <h3>Arkham Horror: The Card Game</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–2<br> 
-      ⏱️ Czas: 60–120 min<br> 
-      🎂 Wiek: 14+ 
-    </div> 
-    <button onclick="openModal('arkham-horror--the-card-game')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Arkham%20Horror%3A%20The%20Card%20Game' alt='Arkham Horror: The Card Game'>
+    <h3>Arkham Horror: The Card Game</h3>
+    <div class='details'>👥 Gracze: 1–2<br>⏱️ Czas: 60–120 min<br>🎂 Wiek: 14+</div>
+    <button onclick="openModal('arkham-horror--the-card-game')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Arkham Horror: The Card Game – The Dunwich Legacy: Expansion -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Arkham%20Horror%3A%20The%20Card%20Game%20%E2%80%93%20The%20Dunwich%20Legacy%3A%20Expansion" alt="Arkham Horror: The Card Game – The Dunwich Legacy: Expansion"> 
-    <h3>Arkham Horror: The Card Game – The Dunwich Legacy: Expansion</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–2<br> 
-      ⏱️ Czas: 60–120 min<br> 
-      🎂 Wiek: 14+ 
-    </div> 
-    <button onclick="openModal('arkham-horror--the-card-game---the-dunwich-legacy--expansion')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Arkham%20Horror%3A%20The%20Card%20Game%20%E2%80%93%20The%20Dunwich%20Legacy%3A%20Expansion' alt='Arkham Horror: The Card Game – The Dunwich Legacy: Expansion'>
+    <h3>Arkham Horror: The Card Game – The Dunwich Legacy: Expansion</h3>
+    <div class='details'>👥 Gracze: 1–2<br>⏱️ Czas: 60–120 min<br>🎂 Wiek: 14+</div>
+    <button onclick="openModal('arkham-horror--the-card-game---the-dunwich-legacy--expansion')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: BANG! The Dice Game -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=BANG%21%20The%20Dice%20Game" alt="BANG! The Dice Game"> 
-    <h3>BANG! The Dice Game</h3> 
-    <div class="details"> 
-      👥 Gracze: 3–8<br> 
-      ⏱️ Czas: 15–15 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('bang--the-dice-game')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=BANG%21%20The%20Dice%20Game' alt='BANG! The Dice Game'>
+    <h3>BANG! The Dice Game</h3>
+    <div class='details'>👥 Gracze: 3–8<br>⏱️ Czas: 15–15 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('bang--the-dice-game')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Blood of the Northmen -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Blood%20of%20the%20Northmen" alt="Blood of the Northmen"> 
-    <h3>Blood of the Northmen</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 15–60 min<br> 
-      🎂 Wiek:  
-    </div> 
-    <button onclick="openModal('blood-of-the-northmen')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Blood%20of%20the%20Northmen' alt='Blood of the Northmen'>
+    <h3>Blood of the Northmen</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 15–60 min<br>🎂 Wiek: </div>
+    <button onclick="openModal('blood-of-the-northmen')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Bonfire -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Bonfire" alt="Bonfire"> 
-    <h3>Bonfire</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 70–100 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('bonfire')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Bonfire' alt='Bonfire'>
+    <h3>Bonfire</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 70–100 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('bonfire')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Brass: Birmingham -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Brass%3A%20Birmingham" alt="Brass: Birmingham"> 
-    <h3>Brass: Birmingham</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 60–120 min<br> 
-      🎂 Wiek: 14+ 
-    </div> 
-    <button onclick="openModal('brass--birmingham')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Brass%3A%20Birmingham' alt='Brass: Birmingham'>
+    <h3>Brass: Birmingham</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 60–120 min<br>🎂 Wiek: 14+</div>
+    <button onclick="openModal('brass--birmingham')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Cartographers -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Cartographers" alt="Cartographers"> 
-    <h3>Cartographers</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–100<br> 
-      ⏱️ Czas: 30–45 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('cartographers')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Cartographers' alt='Cartographers'>
+    <h3>Cartographers</h3>
+    <div class='details'>👥 Gracze: 1–100<br>⏱️ Czas: 30–45 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('cartographers')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Cascadia -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Cascadia" alt="Cascadia"> 
-    <h3>Cascadia</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 30–45 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('cascadia')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Cascadia' alt='Cascadia'>
+    <h3>Cascadia</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 30–45 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('cascadia')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: The Castles of Burgundy -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=The%20Castles%20of%20Burgundy" alt="The Castles of Burgundy"> 
-    <h3>The Castles of Burgundy</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 70–120 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('the-castles-of-burgundy')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=The%20Castles%20of%20Burgundy' alt='The Castles of Burgundy'>
+    <h3>The Castles of Burgundy</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 70–120 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('the-castles-of-burgundy')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Charterstone -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Charterstone" alt="Charterstone"> 
-    <h3>Charterstone</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–6<br> 
-      ⏱️ Czas: 45–75 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('charterstone')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Charterstone' alt='Charterstone'>
+    <h3>Charterstone</h3>
+    <div class='details'>👥 Gracze: 1–6<br>⏱️ Czas: 45–75 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('charterstone')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Chronicles of Avel -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Chronicles%20of%20Avel" alt="Chronicles of Avel"> 
-    <h3>Chronicles of Avel</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 60–60 min<br> 
-      🎂 Wiek: 6+ 
-    </div> 
-    <button onclick="openModal('chronicles-of-avel')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Chronicles%20of%20Avel' alt='Chronicles of Avel'>
+    <h3>Chronicles of Avel</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 60–60 min<br>🎂 Wiek: 6+</div>
+    <button onclick="openModal('chronicles-of-avel')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Chronicles of Avel: Adventurer&#x27;s Toolkit -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Chronicles%20of%20Avel%3A%20Adventurer%27s%20Toolkit" alt="Chronicles of Avel: Adventurer&#x27;s Toolkit"> 
-    <h3>Chronicles of Avel: Adventurer&#x27;s Toolkit</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 60–90 min<br> 
-      🎂 Wiek: 6+ 
-    </div> 
-    <button onclick="openModal('chronicles-of-avel--adventurer-s-toolkit')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Chronicles%20of%20Avel%3A%20Adventurer%27s%20Toolkit' alt='Chronicles of Avel: Adventurer&#x27;s Toolkit'>
+    <h3>Chronicles of Avel: Adventurer&#x27;s Toolkit</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 60–90 min<br>🎂 Wiek: 6+</div>
+    <button onclick="openModal('chronicles-of-avel--adventurer-s-toolkit')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Chronicles of Avel: New Adventures -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Chronicles%20of%20Avel%3A%20New%20Adventures" alt="Chronicles of Avel: New Adventures"> 
-    <h3>Chronicles of Avel: New Adventures</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 60–60 min<br> 
-      🎂 Wiek: 6+ 
-    </div> 
-    <button onclick="openModal('chronicles-of-avel--new-adventures')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Chronicles%20of%20Avel%3A%20New%20Adventures' alt='Chronicles of Avel: New Adventures'>
+    <h3>Chronicles of Avel: New Adventures</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 60–60 min<br>🎂 Wiek: 6+</div>
+    <button onclick="openModal('chronicles-of-avel--new-adventures')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Chronicles of Crime -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Chronicles%20of%20Crime" alt="Chronicles of Crime"> 
-    <h3>Chronicles of Crime</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 60–90 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('chronicles-of-crime')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Chronicles%20of%20Crime' alt='Chronicles of Crime'>
+    <h3>Chronicles of Crime</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 60–90 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('chronicles-of-crime')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Chronicles of Crime: 1400 -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Chronicles%20of%20Crime%3A%201400" alt="Chronicles of Crime: 1400"> 
-    <h3>Chronicles of Crime: 1400</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 60–90 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('chronicles-of-crime--1400')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Chronicles%20of%20Crime%3A%201400' alt='Chronicles of Crime: 1400'>
+    <h3>Chronicles of Crime: 1400</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 60–90 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('chronicles-of-crime--1400')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Chronicles of Crime: 1900 -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Chronicles%20of%20Crime%3A%201900" alt="Chronicles of Crime: 1900"> 
-    <h3>Chronicles of Crime: 1900</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 60–90 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('chronicles-of-crime--1900')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Chronicles%20of%20Crime%3A%201900' alt='Chronicles of Crime: 1900'>
+    <h3>Chronicles of Crime: 1900</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 60–90 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('chronicles-of-crime--1900')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Chronicles of Crime: 2400 -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Chronicles%20of%20Crime%3A%202400" alt="Chronicles of Crime: 2400"> 
-    <h3>Chronicles of Crime: 2400</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 60–90 min<br> 
-      🎂 Wiek: 14+ 
-    </div> 
-    <button onclick="openModal('chronicles-of-crime--2400')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Chronicles%20of%20Crime%3A%202400' alt='Chronicles of Crime: 2400'>
+    <h3>Chronicles of Crime: 2400</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 60–90 min<br>🎂 Wiek: 14+</div>
+    <button onclick="openModal('chronicles-of-crime--2400')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Clank!: A Deck-Building Adventure -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Clank%21%3A%20A%20Deck-Building%20Adventure" alt="Clank!: A Deck-Building Adventure"> 
-    <h3>Clank!: A Deck-Building Adventure</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 30–60 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('clank--a-deck-building-adventure')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Clank%21%3A%20A%20Deck-Building%20Adventure' alt='Clank!: A Deck-Building Adventure'>
+    <h3>Clank!: A Deck-Building Adventure</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 30–60 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('clank--a-deck-building-adventure')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Clank!: Adventuring Party -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Clank%21%3A%20Adventuring%20Party" alt="Clank!: Adventuring Party"> 
-    <h3>Clank!: Adventuring Party</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–6<br> 
-      ⏱️ Czas: 60–120 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('clank--adventuring-party')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Clank%21%3A%20Adventuring%20Party' alt='Clank!: Adventuring Party'>
+    <h3>Clank!: Adventuring Party</h3>
+    <div class='details'>👥 Gracze: 2–6<br>⏱️ Czas: 60–120 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('clank--adventuring-party')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Clank!: The Mummy&#x27;s Curse -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Clank%21%3A%20The%20Mummy%27s%20Curse" alt="Clank!: The Mummy&#x27;s Curse"> 
-    <h3>Clank!: The Mummy&#x27;s Curse</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 30–60 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('clank--the-mummy-s-curse')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Clank%21%3A%20The%20Mummy%27s%20Curse' alt='Clank!: The Mummy&#x27;s Curse'>
+    <h3>Clank!: The Mummy&#x27;s Curse</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 30–60 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('clank--the-mummy-s-curse')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Clever 4Ever -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Clever%204Ever" alt="Clever 4Ever"> 
-    <h3>Clever 4Ever</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 30–30 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('clever-4ever')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Clever%204Ever' alt='Clever 4Ever'>
+    <h3>Clever 4Ever</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 30–30 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('clever-4ever')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Cóatl -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=C%C3%B3atl" alt="Cóatl"> 
-    <h3>Cóatl</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 30–60 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('c-atl')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=C%C3%B3atl' alt='Cóatl'>
+    <h3>Cóatl</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 30–60 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('c-atl')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Codenames -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Codenames" alt="Codenames"> 
-    <h3>Codenames</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–8<br> 
-      ⏱️ Czas: 15–15 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('codenames')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Codenames' alt='Codenames'>
+    <h3>Codenames</h3>
+    <div class='details'>👥 Gracze: 2–8<br>⏱️ Czas: 15–15 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('codenames')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Codenames: Pictures -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Codenames%3A%20Pictures" alt="Codenames: Pictures"> 
-    <h3>Codenames: Pictures</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–8<br> 
-      ⏱️ Czas: 15–15 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('codenames--pictures')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Codenames%3A%20Pictures' alt='Codenames: Pictures'>
+    <h3>Codenames: Pictures</h3>
+    <div class='details'>👥 Gracze: 2–8<br>⏱️ Czas: 15–15 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('codenames--pictures')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: The Crew: Mission Deep Sea -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=The%20Crew%3A%20Mission%20Deep%20Sea" alt="The Crew: Mission Deep Sea"> 
-    <h3>The Crew: Mission Deep Sea</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–5<br> 
-      ⏱️ Czas: 20–20 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('the-crew--mission-deep-sea')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=The%20Crew%3A%20Mission%20Deep%20Sea' alt='The Crew: Mission Deep Sea'>
+    <h3>The Crew: Mission Deep Sea</h3>
+    <div class='details'>👥 Gracze: 2–5<br>⏱️ Czas: 20–20 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('the-crew--mission-deep-sea')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Crime Zoom: His Last Card -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Crime%20Zoom%3A%20His%20Last%20Card" alt="Crime Zoom: His Last Card"> 
-    <h3>Crime Zoom: His Last Card</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–6<br> 
-      ⏱️ Czas: 60–60 min<br> 
-      🎂 Wiek: 14+ 
-    </div> 
-    <button onclick="openModal('crime-zoom--his-last-card')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Crime%20Zoom%3A%20His%20Last%20Card' alt='Crime Zoom: His Last Card'>
+    <h3>Crime Zoom: His Last Card</h3>
+    <div class='details'>👥 Gracze: 1–6<br>⏱️ Czas: 60–60 min<br>🎂 Wiek: 14+</div>
+    <button onclick="openModal('crime-zoom--his-last-card')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Descent: Journeys in the Dark (Second Edition) -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Descent%3A%20Journeys%20in%20the%20Dark%20%28Second%20Edition%29" alt="Descent: Journeys in the Dark (Second Edition)"> 
-    <h3>Descent: Journeys in the Dark (Second Edition)</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–5<br> 
-      ⏱️ Czas: 120–120 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('descent--journeys-in-the-dark--second-edition-')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Descent%3A%20Journeys%20in%20the%20Dark%20%28Second%20Edition%29' alt='Descent: Journeys in the Dark (Second Edition)'>
+    <h3>Descent: Journeys in the Dark (Second Edition)</h3>
+    <div class='details'>👥 Gracze: 1–5<br>⏱️ Czas: 120–120 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('descent--journeys-in-the-dark--second-edition-')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Destinies -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Destinies" alt="Destinies"> 
-    <h3>Destinies</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–3<br> 
-      ⏱️ Czas: 90–150 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('destinies')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Destinies' alt='Destinies'>
+    <h3>Destinies</h3>
+    <div class='details'>👥 Gracze: 1–3<br>⏱️ Czas: 90–150 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('destinies')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Dice Throne: Season One Rerolled – Battle 1:  Barbarian v. Moon Elf -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Dice%20Throne%3A%20Season%20One%20Rerolled%20%E2%80%93%20Battle%201%3A%20%20Barbarian%20v.%20Moon%20Elf" alt="Dice Throne: Season One Rerolled – Battle 1:  Barbarian v. Moon Elf"> 
-    <h3>Dice Throne: Season One Rerolled – Battle 1:  Barbarian v. Moon Elf</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–2<br> 
-      ⏱️ Czas: 20–40 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('dice-throne--season-one-rerolled---battle-1---barbarian-v--moon-elf')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Dice%20Throne%3A%20Season%20One%20Rerolled%20%E2%80%93%20Battle%201%3A%20%20Barbarian%20v.%20Moon%20Elf' alt='Dice Throne: Season One Rerolled – Battle 1:  Barbarian v. Moon Elf'>
+    <h3>Dice Throne: Season One Rerolled – Battle 1:  Barbarian v. Moon Elf</h3>
+    <div class='details'>👥 Gracze: 2–2<br>⏱️ Czas: 20–40 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('dice-throne--season-one-rerolled---battle-1---barbarian-v--moon-elf')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Dominion -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Dominion" alt="Dominion"> 
-    <h3>Dominion</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 30–30 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('dominion')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Dominion' alt='Dominion'>
+    <h3>Dominion</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 30–30 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('dominion')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Escape: The Curse of the Temple -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Escape%3A%20The%20Curse%20of%20the%20Temple" alt="Escape: The Curse of the Temple"> 
-    <h3>Escape: The Curse of the Temple</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–5<br> 
-      ⏱️ Czas: 10–10 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('escape--the-curse-of-the-temple')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Escape%3A%20The%20Curse%20of%20the%20Temple' alt='Escape: The Curse of the Temple'>
+    <h3>Escape: The Curse of the Temple</h3>
+    <div class='details'>👥 Gracze: 1–5<br>⏱️ Czas: 10–10 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('escape--the-curse-of-the-temple')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Everdell -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Everdell" alt="Everdell"> 
-    <h3>Everdell</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 40–80 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('everdell')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Everdell' alt='Everdell'>
+    <h3>Everdell</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 40–80 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('everdell')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Everdell: Pearlbrook -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Everdell%3A%20Pearlbrook" alt="Everdell: Pearlbrook"> 
-    <h3>Everdell: Pearlbrook</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 40–80 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('everdell--pearlbrook')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Everdell%3A%20Pearlbrook' alt='Everdell: Pearlbrook'>
+    <h3>Everdell: Pearlbrook</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 40–80 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('everdell--pearlbrook')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: EXIT: The Game – Dead Man on the Orient Express -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=EXIT%3A%20The%20Game%20%E2%80%93%20Dead%20Man%20on%20the%20Orient%20Express" alt="EXIT: The Game – Dead Man on the Orient Express"> 
-    <h3>EXIT: The Game – Dead Man on the Orient Express</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 60–120 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('exit--the-game---dead-man-on-the-orient-express')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=EXIT%3A%20The%20Game%20%E2%80%93%20Dead%20Man%20on%20the%20Orient%20Express' alt='EXIT: The Game – Dead Man on the Orient Express'>
+    <h3>EXIT: The Game – Dead Man on the Orient Express</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 60–120 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('exit--the-game---dead-man-on-the-orient-express')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: EXIT: The Game – The Pharaoh&#x27;s Tomb -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=EXIT%3A%20The%20Game%20%E2%80%93%20The%20Pharaoh%27s%20Tomb" alt="EXIT: The Game – The Pharaoh&#x27;s Tomb"> 
-    <h3>EXIT: The Game – The Pharaoh&#x27;s Tomb</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–6<br> 
-      ⏱️ Czas: 45–90 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('exit--the-game---the-pharaoh-s-tomb')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=EXIT%3A%20The%20Game%20%E2%80%93%20The%20Pharaoh%27s%20Tomb' alt='EXIT: The Game – The Pharaoh&#x27;s Tomb'>
+    <h3>EXIT: The Game – The Pharaoh&#x27;s Tomb</h3>
+    <div class='details'>👥 Gracze: 1–6<br>⏱️ Czas: 45–90 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('exit--the-game---the-pharaoh-s-tomb')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Flip 7 -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Flip%207" alt="Flip 7"> 
-    <h3>Flip 7</h3> 
-    <div class="details"> 
-      👥 Gracze: 3–18<br> 
-      ⏱️ Czas: 20–20 min<br> 
-      🎂 Wiek: 6+ 
-    </div> 
-    <button onclick="openModal('flip-7')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Flip%207' alt='Flip 7'>
+    <h3>Flip 7</h3>
+    <div class='details'>👥 Gracze: 3–18<br>⏱️ Czas: 20–20 min<br>🎂 Wiek: 6+</div>
+    <button onclick="openModal('flip-7')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Fury of Dracula (Third/Fourth Edition) -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Fury%20of%20Dracula%20%28Third/Fourth%20Edition%29" alt="Fury of Dracula (Third/Fourth Edition)"> 
-    <h3>Fury of Dracula (Third/Fourth Edition)</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–5<br> 
-      ⏱️ Czas: 120–180 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('fury-of-dracula--third-fourth-edition-')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Fury%20of%20Dracula%20%28Third/Fourth%20Edition%29' alt='Fury of Dracula (Third/Fourth Edition)'>
+    <h3>Fury of Dracula (Third/Fourth Edition)</h3>
+    <div class='details'>👥 Gracze: 2–5<br>⏱️ Czas: 120–180 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('fury-of-dracula--third-fourth-edition-')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Gierki Ma??e?skie -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Gierki%20Ma%3F%3Fe%3Fskie" alt="Gierki Ma??e?skie"> 
-    <h3>Gierki Ma??e?skie</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–8<br> 
-      ⏱️ Czas: 45–60 min<br> 
-      🎂 Wiek: 18+ 
-    </div> 
-    <button onclick="openModal('gierki-ma-e-skie')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Gierki%20Ma%3F%3Fe%3Fskie' alt='Gierki Ma??e?skie'>
+    <h3>Gierki Ma??e?skie</h3>
+    <div class='details'>👥 Gracze: 2–8<br>⏱️ Czas: 45–60 min<br>🎂 Wiek: 18+</div>
+    <button onclick="openModal('gierki-ma-e-skie')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Gloomhaven -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Gloomhaven" alt="Gloomhaven"> 
-    <h3>Gloomhaven</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 60–120 min<br> 
-      🎂 Wiek: 14+ 
-    </div> 
-    <button onclick="openModal('gloomhaven')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Gloomhaven' alt='Gloomhaven'>
+    <h3>Gloomhaven</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 60–120 min<br>🎂 Wiek: 14+</div>
+    <button onclick="openModal('gloomhaven')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Gloomhaven: Jaws of the Lion -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Gloomhaven%3A%20Jaws%20of%20the%20Lion" alt="Gloomhaven: Jaws of the Lion"> 
-    <h3>Gloomhaven: Jaws of the Lion</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 30–120 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('gloomhaven--jaws-of-the-lion')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Gloomhaven%3A%20Jaws%20of%20the%20Lion' alt='Gloomhaven: Jaws of the Lion'>
+    <h3>Gloomhaven: Jaws of the Lion</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 30–120 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('gloomhaven--jaws-of-the-lion')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Glory to Rome -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Glory%20to%20Rome" alt="Glory to Rome"> 
-    <h3>Glory to Rome</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–5<br> 
-      ⏱️ Czas: 60–60 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('glory-to-rome')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Glory%20to%20Rome' alt='Glory to Rome'>
+    <h3>Glory to Rome</h3>
+    <div class='details'>👥 Gracze: 2–5<br>⏱️ Czas: 60–60 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('glory-to-rome')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Hero Realms -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Hero%20Realms" alt="Hero Realms"> 
-    <h3>Hero Realms</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 20–20 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('hero-realms')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Hero%20Realms' alt='Hero Realms'>
+    <h3>Hero Realms</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 20–20 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('hero-realms')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Hero Realms: Boss Deck – Lich -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Hero%20Realms%3A%20Boss%20Deck%20%E2%80%93%20Lich" alt="Hero Realms: Boss Deck – Lich"> 
-    <h3>Hero Realms: Boss Deck – Lich</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 0–0 min<br> 
-      🎂 Wiek: 6+ 
-    </div> 
-    <button onclick="openModal('hero-realms--boss-deck---lich')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Hero%20Realms%3A%20Boss%20Deck%20%E2%80%93%20Lich' alt='Hero Realms: Boss Deck – Lich'>
+    <h3>Hero Realms: Boss Deck – Lich</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 0–0 min<br>🎂 Wiek: 6+</div>
+    <button onclick="openModal('hero-realms--boss-deck---lich')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Hero Realms: Boss Deck – The Dragon -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Hero%20Realms%3A%20Boss%20Deck%20%E2%80%93%20The%20Dragon" alt="Hero Realms: Boss Deck – The Dragon"> 
-    <h3>Hero Realms: Boss Deck – The Dragon</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 0–0 min<br> 
-      🎂 Wiek: 6+ 
-    </div> 
-    <button onclick="openModal('hero-realms--boss-deck---the-dragon')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Hero%20Realms%3A%20Boss%20Deck%20%E2%80%93%20The%20Dragon' alt='Hero Realms: Boss Deck – The Dragon'>
+    <h3>Hero Realms: Boss Deck – The Dragon</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 0–0 min<br>🎂 Wiek: 6+</div>
+    <button onclick="openModal('hero-realms--boss-deck---the-dragon')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Hero Realms: Character Pack – Cleric -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Hero%20Realms%3A%20Character%20Pack%20%E2%80%93%20Cleric" alt="Hero Realms: Character Pack – Cleric"> 
-    <h3>Hero Realms: Character Pack – Cleric</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 20–0 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('hero-realms--character-pack---cleric')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Hero%20Realms%3A%20Character%20Pack%20%E2%80%93%20Cleric' alt='Hero Realms: Character Pack – Cleric'>
+    <h3>Hero Realms: Character Pack – Cleric</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 20–0 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('hero-realms--character-pack---cleric')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Hero Realms: Character Pack – Fighter -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Hero%20Realms%3A%20Character%20Pack%20%E2%80%93%20Fighter" alt="Hero Realms: Character Pack – Fighter"> 
-    <h3>Hero Realms: Character Pack – Fighter</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 20–0 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('hero-realms--character-pack---fighter')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Hero%20Realms%3A%20Character%20Pack%20%E2%80%93%20Fighter' alt='Hero Realms: Character Pack – Fighter'>
+    <h3>Hero Realms: Character Pack – Fighter</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 20–0 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('hero-realms--character-pack---fighter')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Hero Realms: Character Pack – Ranger -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Hero%20Realms%3A%20Character%20Pack%20%E2%80%93%20Ranger" alt="Hero Realms: Character Pack – Ranger"> 
-    <h3>Hero Realms: Character Pack – Ranger</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 20–0 min<br> 
-      🎂 Wiek: 6+ 
-    </div> 
-    <button onclick="openModal('hero-realms--character-pack---ranger')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Hero%20Realms%3A%20Character%20Pack%20%E2%80%93%20Ranger' alt='Hero Realms: Character Pack – Ranger'>
+    <h3>Hero Realms: Character Pack – Ranger</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 20–0 min<br>🎂 Wiek: 6+</div>
+    <button onclick="openModal('hero-realms--character-pack---ranger')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Hero Realms: Character Pack – Thief -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Hero%20Realms%3A%20Character%20Pack%20%E2%80%93%20Thief" alt="Hero Realms: Character Pack – Thief"> 
-    <h3>Hero Realms: Character Pack – Thief</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 20–0 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('hero-realms--character-pack---thief')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Hero%20Realms%3A%20Character%20Pack%20%E2%80%93%20Thief' alt='Hero Realms: Character Pack – Thief'>
+    <h3>Hero Realms: Character Pack – Thief</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 20–0 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('hero-realms--character-pack---thief')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Hero Realms: Character Pack – Wizard -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Hero%20Realms%3A%20Character%20Pack%20%E2%80%93%20Wizard" alt="Hero Realms: Character Pack – Wizard"> 
-    <h3>Hero Realms: Character Pack – Wizard</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 20–0 min<br> 
-      🎂 Wiek: 6+ 
-    </div> 
-    <button onclick="openModal('hero-realms--character-pack---wizard')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Hero%20Realms%3A%20Character%20Pack%20%E2%80%93%20Wizard' alt='Hero Realms: Character Pack – Wizard'>
+    <h3>Hero Realms: Character Pack – Wizard</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 20–0 min<br>🎂 Wiek: 6+</div>
+    <button onclick="openModal('hero-realms--character-pack---wizard')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Hero Realms: The Lost Village Campaign Deck -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Hero%20Realms%3A%20The%20Lost%20Village%20Campaign%20Deck" alt="Hero Realms: The Lost Village Campaign Deck"> 
-    <h3>Hero Realms: The Lost Village Campaign Deck</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–5<br> 
-      ⏱️ Czas: 20–30 min<br> 
-      🎂 Wiek: 12 
-    </div> 
-    <button onclick="openModal('hero-realms--the-lost-village-campaign-deck')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Hero%20Realms%3A%20The%20Lost%20Village%20Campaign%20Deck' alt='Hero Realms: The Lost Village Campaign Deck'>
+    <h3>Hero Realms: The Lost Village Campaign Deck</h3>
+    <div class='details'>👥 Gracze: 1–5<br>⏱️ Czas: 20–30 min<br>🎂 Wiek: 12</div>
+    <button onclick="openModal('hero-realms--the-lost-village-campaign-deck')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Hero Realms: The Ruin of Thandar Campaign Deck -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Hero%20Realms%3A%20The%20Ruin%20of%20Thandar%20Campaign%20Deck" alt="Hero Realms: The Ruin of Thandar Campaign Deck"> 
-    <h3>Hero Realms: The Ruin of Thandar Campaign Deck</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–5<br> 
-      ⏱️ Czas: 90–90 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('hero-realms--the-ruin-of-thandar-campaign-deck')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Hero%20Realms%3A%20The%20Ruin%20of%20Thandar%20Campaign%20Deck' alt='Hero Realms: The Ruin of Thandar Campaign Deck'>
+    <h3>Hero Realms: The Ruin of Thandar Campaign Deck</h3>
+    <div class='details'>👥 Gracze: 1–5<br>⏱️ Czas: 90–90 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('hero-realms--the-ruin-of-thandar-campaign-deck')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Horrified -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Horrified" alt="Horrified"> 
-    <h3>Horrified</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–5<br> 
-      ⏱️ Czas: 60–60 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('horrified')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Horrified' alt='Horrified'>
+    <h3>Horrified</h3>
+    <div class='details'>👥 Gracze: 1–5<br>⏱️ Czas: 60–60 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('horrified')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Imperial Settlers: Empires of the North -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Imperial%20Settlers%3A%20Empires%20of%20the%20North" alt="Imperial Settlers: Empires of the North"> 
-    <h3>Imperial Settlers: Empires of the North</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 45–90 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('imperial-settlers--empires-of-the-north')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Imperial%20Settlers%3A%20Empires%20of%20the%20North' alt='Imperial Settlers: Empires of the North'>
+    <h3>Imperial Settlers: Empires of the North</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 45–90 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('imperial-settlers--empires-of-the-north')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Imperial Settlers: Roll &amp; Write -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Imperial%20Settlers%3A%20Roll%20%26%20Write" alt="Imperial Settlers: Roll &amp; Write"> 
-    <h3>Imperial Settlers: Roll &amp; Write</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 30–30 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('imperial-settlers--roll---write')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Imperial%20Settlers%3A%20Roll%20%26%20Write' alt='Imperial Settlers: Roll &amp; Write'>
+    <h3>Imperial Settlers: Roll &amp; Write</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 30–30 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('imperial-settlers--roll---write')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: It&#x27;s a Wonderful Kingdom -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=It%27s%20a%20Wonderful%20Kingdom" alt="It&#x27;s a Wonderful Kingdom"> 
-    <h3>It&#x27;s a Wonderful Kingdom</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–2<br> 
-      ⏱️ Czas: 45–45 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('it-s-a-wonderful-kingdom')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=It%27s%20a%20Wonderful%20Kingdom' alt='It&#x27;s a Wonderful Kingdom'>
+    <h3>It&#x27;s a Wonderful Kingdom</h3>
+    <div class='details'>👥 Gracze: 1–2<br>⏱️ Czas: 45–45 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('it-s-a-wonderful-kingdom')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Jakub W?drowycz: Dziki Samogon -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Jakub%20W%3Fdrowycz%3A%20Dziki%20Samogon" alt="Jakub W?drowycz: Dziki Samogon"> 
-    <h3>Jakub W?drowycz: Dziki Samogon</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 45–45 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('jakub-w-drowycz--dziki-samogon')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Jakub%20W%3Fdrowycz%3A%20Dziki%20Samogon' alt='Jakub W?drowycz: Dziki Samogon'>
+    <h3>Jakub W?drowycz: Dziki Samogon</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 45–45 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('jakub-w-drowycz--dziki-samogon')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Journal 29 Revelation: Interactive Book Game -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Journal%2029%20Revelation%3A%20Interactive%20Book%20Game" alt="Journal 29 Revelation: Interactive Book Game"> 
-    <h3>Journal 29 Revelation: Interactive Book Game</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–10<br> 
-      ⏱️ Czas: 120–120 min<br> 
-      🎂 Wiek:  
-    </div> 
-    <button onclick="openModal('journal-29-revelation--interactive-book-game')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Journal%2029%20Revelation%3A%20Interactive%20Book%20Game' alt='Journal 29 Revelation: Interactive Book Game'>
+    <h3>Journal 29 Revelation: Interactive Book Game</h3>
+    <div class='details'>👥 Gracze: 1–10<br>⏱️ Czas: 120–120 min<br>🎂 Wiek: </div>
+    <button onclick="openModal('journal-29-revelation--interactive-book-game')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: KeyForge: Age of Ascension -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=KeyForge%3A%20Age%20of%20Ascension" alt="KeyForge: Age of Ascension"> 
-    <h3>KeyForge: Age of Ascension</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–2<br> 
-      ⏱️ Czas: 15–45 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('keyforge--age-of-ascension')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=KeyForge%3A%20Age%20of%20Ascension' alt='KeyForge: Age of Ascension'>
+    <h3>KeyForge: Age of Ascension</h3>
+    <div class='details'>👥 Gracze: 2–2<br>⏱️ Czas: 15–45 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('keyforge--age-of-ascension')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Kingdom Builder -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Kingdom%20Builder" alt="Kingdom Builder"> 
-    <h3>Kingdom Builder</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 45–45 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('kingdom-builder')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Kingdom%20Builder' alt='Kingdom Builder'>
+    <h3>Kingdom Builder</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 45–45 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('kingdom-builder')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Last Bastion -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Last%20Bastion" alt="Last Bastion"> 
-    <h3>Last Bastion</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 45–45 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('last-bastion')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Last%20Bastion' alt='Last Bastion'>
+    <h3>Last Bastion</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 45–45 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('last-bastion')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Little Alchemists -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Little%20Alchemists" alt="Little Alchemists"> 
-    <h3>Little Alchemists</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 20–40 min<br> 
-      🎂 Wiek: 6+ 
-    </div> 
-    <button onclick="openModal('little-alchemists')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Little%20Alchemists' alt='Little Alchemists'>
+    <h3>Little Alchemists</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 20–40 min<br>🎂 Wiek: 6+</div>
+    <button onclick="openModal('little-alchemists')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Lost Ruins of Arnak -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Lost%20Ruins%20of%20Arnak" alt="Lost Ruins of Arnak"> 
-    <h3>Lost Ruins of Arnak</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 30–120 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('lost-ruins-of-arnak')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Lost%20Ruins%20of%20Arnak' alt='Lost Ruins of Arnak'>
+    <h3>Lost Ruins of Arnak</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 30–120 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('lost-ruins-of-arnak')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Mafia -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Mafia" alt="Mafia"> 
-    <h3>Mafia</h3> 
-    <div class="details"> 
-      👥 Gracze: 7–22<br> 
-      ⏱️ Czas: 30–60 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('mafia')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Mafia' alt='Mafia'>
+    <h3>Mafia</h3>
+    <div class='details'>👥 Gracze: 7–22<br>⏱️ Czas: 30–60 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('mafia')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Magic: The Gathering -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Magic%3A%20The%20Gathering" alt="Magic: The Gathering"> 
-    <h3>Magic: The Gathering</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–6<br> 
-      ⏱️ Czas: 20–20 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('magic--the-gathering')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Magic%3A%20The%20Gathering' alt='Magic: The Gathering'>
+    <h3>Magic: The Gathering</h3>
+    <div class='details'>👥 Gracze: 2–6<br>⏱️ Czas: 20–20 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('magic--the-gathering')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: MLEM: Space Agency -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=MLEM%3A%20Space%20Agency" alt="MLEM: Space Agency"> 
-    <h3>MLEM: Space Agency</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–5<br> 
-      ⏱️ Czas: 30–60 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('mlem--space-agency')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=MLEM%3A%20Space%20Agency' alt='MLEM: Space Agency'>
+    <h3>MLEM: Space Agency</h3>
+    <div class='details'>👥 Gracze: 2–5<br>⏱️ Czas: 30–60 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('mlem--space-agency')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Mr. Jack -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Mr.%20Jack" alt="Mr. Jack"> 
-    <h3>Mr. Jack</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–2<br> 
-      ⏱️ Czas: 30–30 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('mr--jack')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Mr.%20Jack' alt='Mr. Jack'>
+    <h3>Mr. Jack</h3>
+    <div class='details'>👥 Gracze: 2–2<br>⏱️ Czas: 30–30 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('mr--jack')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Munchkin -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Munchkin" alt="Munchkin"> 
-    <h3>Munchkin</h3> 
-    <div class="details"> 
-      👥 Gracze: 3–6<br> 
-      ⏱️ Czas: 60–120 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('munchkin')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Munchkin' alt='Munchkin'>
+    <h3>Munchkin</h3>
+    <div class='details'>👥 Gracze: 3–6<br>⏱️ Czas: 60–120 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('munchkin')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Neuroshima Hex -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Neuroshima%20Hex" alt="Neuroshima Hex"> 
-    <h3>Neuroshima Hex</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 30–30 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('neuroshima-hex')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Neuroshima%20Hex' alt='Neuroshima Hex'>
+    <h3>Neuroshima Hex</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 30–30 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('neuroshima-hex')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: New Frontiers -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=New%20Frontiers" alt="New Frontiers"> 
-    <h3>New Frontiers</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–5<br> 
-      ⏱️ Czas: 45–75 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('new-frontiers')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=New%20Frontiers' alt='New Frontiers'>
+    <h3>New Frontiers</h3>
+    <div class='details'>👥 Gracze: 2–5<br>⏱️ Czas: 45–75 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('new-frontiers')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Nightfall -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Nightfall" alt="Nightfall"> 
-    <h3>Nightfall</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–5<br> 
-      ⏱️ Czas: 45–45 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('nightfall')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Nightfall' alt='Nightfall'>
+    <h3>Nightfall</h3>
+    <div class='details'>👥 Gracze: 2–5<br>⏱️ Czas: 45–45 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('nightfall')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Nightfall: Martial Law -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Nightfall%3A%20Martial%20Law" alt="Nightfall: Martial Law"> 
-    <h3>Nightfall: Martial Law</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–5<br> 
-      ⏱️ Czas: 45–45 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('nightfall--martial-law')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Nightfall%3A%20Martial%20Law' alt='Nightfall: Martial Law'>
+    <h3>Nightfall: Martial Law</h3>
+    <div class='details'>👥 Gracze: 2–5<br>⏱️ Czas: 45–45 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('nightfall--martial-law')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Nova Luna -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Nova%20Luna" alt="Nova Luna"> 
-    <h3>Nova Luna</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 30–60 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('nova-luna')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Nova%20Luna' alt='Nova Luna'>
+    <h3>Nova Luna</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 30–60 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('nova-luna')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: One Deck Dungeon -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=One%20Deck%20Dungeon" alt="One Deck Dungeon"> 
-    <h3>One Deck Dungeon</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–2<br> 
-      ⏱️ Czas: 30–45 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('one-deck-dungeon')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=One%20Deck%20Dungeon' alt='One Deck Dungeon'>
+    <h3>One Deck Dungeon</h3>
+    <div class='details'>👥 Gracze: 1–2<br>⏱️ Czas: 30–45 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('one-deck-dungeon')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: One Night Ultimate Werewolf -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=One%20Night%20Ultimate%20Werewolf" alt="One Night Ultimate Werewolf"> 
-    <h3>One Night Ultimate Werewolf</h3> 
-    <div class="details"> 
-      👥 Gracze: 3–10<br> 
-      ⏱️ Czas: 10–10 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('one-night-ultimate-werewolf')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=One%20Night%20Ultimate%20Werewolf' alt='One Night Ultimate Werewolf'>
+    <h3>One Night Ultimate Werewolf</h3>
+    <div class='details'>👥 Gracze: 3–10<br>⏱️ Czas: 10–10 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('one-night-ultimate-werewolf')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Orléans -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Orl%C3%A9ans" alt="Orléans"> 
-    <h3>Orléans</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–5<br> 
-      ⏱️ Czas: 90–90 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('orl-ans')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Orl%C3%A9ans' alt='Orléans'>
+    <h3>Orléans</h3>
+    <div class='details'>👥 Gracze: 2–5<br>⏱️ Czas: 90–90 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('orl-ans')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Orléans: Trade &amp; Intrigue -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Orl%C3%A9ans%3A%20Trade%20%26%20Intrigue" alt="Orléans: Trade &amp; Intrigue"> 
-    <h3>Orléans: Trade &amp; Intrigue</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–5<br> 
-      ⏱️ Czas: 90–90 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('orl-ans--trade---intrigue')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Orl%C3%A9ans%3A%20Trade%20%26%20Intrigue' alt='Orléans: Trade &amp; Intrigue'>
+    <h3>Orléans: Trade &amp; Intrigue</h3>
+    <div class='details'>👥 Gracze: 2–5<br>⏱️ Czas: 90–90 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('orl-ans--trade---intrigue')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Paladins of the West Kingdom -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Paladins%20of%20the%20West%20Kingdom" alt="Paladins of the West Kingdom"> 
-    <h3>Paladins of the West Kingdom</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 90–120 min<br> 
-      🎂 Wiek: 14+ 
-    </div> 
-    <button onclick="openModal('paladins-of-the-west-kingdom')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Paladins%20of%20the%20West%20Kingdom' alt='Paladins of the West Kingdom'>
+    <h3>Paladins of the West Kingdom</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 90–120 min<br>🎂 Wiek: 14+</div>
+    <button onclick="openModal('paladins-of-the-west-kingdom')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Pandemic -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Pandemic" alt="Pandemic"> 
-    <h3>Pandemic</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 45–45 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('pandemic')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Pandemic' alt='Pandemic'>
+    <h3>Pandemic</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 45–45 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('pandemic')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: The Quest for El Dorado -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=The%20Quest%20for%20El%20Dorado" alt="The Quest for El Dorado"> 
-    <h3>The Quest for El Dorado</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 30–60 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('the-quest-for-el-dorado')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=The%20Quest%20for%20El%20Dorado' alt='The Quest for El Dorado'>
+    <h3>The Quest for El Dorado</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 30–60 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('the-quest-for-el-dorado')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: The Quest for El Dorado: Heroes &amp; Hexes -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=The%20Quest%20for%20El%20Dorado%3A%20Heroes%20%26%20Hexes" alt="The Quest for El Dorado: Heroes &amp; Hexes"> 
-    <h3>The Quest for El Dorado: Heroes &amp; Hexes</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 30–60 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('the-quest-for-el-dorado--heroes---hexes')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=The%20Quest%20for%20El%20Dorado%3A%20Heroes%20%26%20Hexes' alt='The Quest for El Dorado: Heroes &amp; Hexes'>
+    <h3>The Quest for El Dorado: Heroes &amp; Hexes</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 30–60 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('the-quest-for-el-dorado--heroes---hexes')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Radlands -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Radlands" alt="Radlands"> 
-    <h3>Radlands</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–2<br> 
-      ⏱️ Czas: 20–40 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('radlands')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Radlands' alt='Radlands'>
+    <h3>Radlands</h3>
+    <div class='details'>👥 Gracze: 2–2<br>⏱️ Czas: 20–40 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('radlands')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Reef -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Reef" alt="Reef"> 
-    <h3>Reef</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 30–45 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('reef')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Reef' alt='Reef'>
+    <h3>Reef</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 30–45 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('reef')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Res Arcana -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Res%20Arcana" alt="Res Arcana"> 
-    <h3>Res Arcana</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 30–60 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('res-arcana')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Res%20Arcana' alt='Res Arcana'>
+    <h3>Res Arcana</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 30–60 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('res-arcana')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Res Arcana: Lux et Tenebrae -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Res%20Arcana%3A%20Lux%20et%20Tenebrae" alt="Res Arcana: Lux et Tenebrae"> 
-    <h3>Res Arcana: Lux et Tenebrae</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–5<br> 
-      ⏱️ Czas: 30–60 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('res-arcana--lux-et-tenebrae')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Res%20Arcana%3A%20Lux%20et%20Tenebrae' alt='Res Arcana: Lux et Tenebrae'>
+    <h3>Res Arcana: Lux et Tenebrae</h3>
+    <div class='details'>👥 Gracze: 2–5<br>⏱️ Czas: 30–60 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('res-arcana--lux-et-tenebrae')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Res Arcana: Perlae Imperii -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Res%20Arcana%3A%20Perlae%20Imperii" alt="Res Arcana: Perlae Imperii"> 
-    <h3>Res Arcana: Perlae Imperii</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–5<br> 
-      ⏱️ Czas: 20–60 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('res-arcana--perlae-imperii')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Res%20Arcana%3A%20Perlae%20Imperii' alt='Res Arcana: Perlae Imperii'>
+    <h3>Res Arcana: Perlae Imperii</h3>
+    <div class='details'>👥 Gracze: 2–5<br>⏱️ Czas: 20–60 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('res-arcana--perlae-imperii')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Risk: Godstorm -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Risk%3A%20Godstorm" alt="Risk: Godstorm"> 
-    <h3>Risk: Godstorm</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–5<br> 
-      ⏱️ Czas: 120–120 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('risk--godstorm')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Risk%3A%20Godstorm' alt='Risk: Godstorm'>
+    <h3>Risk: Godstorm</h3>
+    <div class='details'>👥 Gracze: 2–5<br>⏱️ Czas: 120–120 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('risk--godstorm')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Robinson Crusoe: Adventures on the Cursed Island -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Robinson%20Crusoe%3A%20Adventures%20on%20the%20Cursed%20Island" alt="Robinson Crusoe: Adventures on the Cursed Island"> 
-    <h3>Robinson Crusoe: Adventures on the Cursed Island</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 60–120 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('robinson-crusoe--adventures-on-the-cursed-island')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Robinson%20Crusoe%3A%20Adventures%20on%20the%20Cursed%20Island' alt='Robinson Crusoe: Adventures on the Cursed Island'>
+    <h3>Robinson Crusoe: Adventures on the Cursed Island</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 60–120 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('robinson-crusoe--adventures-on-the-cursed-island')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Runebound: Second Edition -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Runebound%3A%20Second%20Edition" alt="Runebound: Second Edition"> 
-    <h3>Runebound: Second Edition</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–6<br> 
-      ⏱️ Czas: 120–240 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('runebound--second-edition')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Runebound%3A%20Second%20Edition' alt='Runebound: Second Edition'>
+    <h3>Runebound: Second Edition</h3>
+    <div class='details'>👥 Gracze: 2–6<br>⏱️ Czas: 120–240 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('runebound--second-edition')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Sanctuary: The Keepers Era -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Sanctuary%3A%20The%20Keepers%20Era" alt="Sanctuary: The Keepers Era"> 
-    <h3>Sanctuary: The Keepers Era</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–2<br> 
-      ⏱️ Czas: 20–60 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('sanctuary--the-keepers-era')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Sanctuary%3A%20The%20Keepers%20Era' alt='Sanctuary: The Keepers Era'>
+    <h3>Sanctuary: The Keepers Era</h3>
+    <div class='details'>👥 Gracze: 1–2<br>⏱️ Czas: 20–60 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('sanctuary--the-keepers-era')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Sleeping Gods -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Sleeping%20Gods" alt="Sleeping Gods"> 
-    <h3>Sleeping Gods</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 60–1200 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('sleeping-gods')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Sleeping%20Gods' alt='Sleeping Gods'>
+    <h3>Sleeping Gods</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 60–1200 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('sleeping-gods')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Small World -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Small%20World" alt="Small World"> 
-    <h3>Small World</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–5<br> 
-      ⏱️ Czas: 40–80 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('small-world')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Small%20World' alt='Small World'>
+    <h3>Small World</h3>
+    <div class='details'>👥 Gracze: 2–5<br>⏱️ Czas: 40–80 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('small-world')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Small World: Power Pack 2 -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Small%20World%3A%20Power%20Pack%202" alt="Small World: Power Pack 2"> 
-    <h3>Small World: Power Pack 2</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–5<br> 
-      ⏱️ Czas: 40–80 min<br> 
-      🎂 Wiek:  
-    </div> 
-    <button onclick="openModal('small-world--power-pack-2')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Small%20World%3A%20Power%20Pack%202' alt='Small World: Power Pack 2'>
+    <h3>Small World: Power Pack 2</h3>
+    <div class='details'>👥 Gracze: 2–5<br>⏱️ Czas: 40–80 min<br>🎂 Wiek: </div>
+    <button onclick="openModal('small-world--power-pack-2')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: SolForge Fusion -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=SolForge%20Fusion" alt="SolForge Fusion"> 
-    <h3>SolForge Fusion</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 25–60 min<br> 
-      🎂 Wiek: 14–8 
-    </div> 
-    <button onclick="openModal('solforge-fusion')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=SolForge%20Fusion' alt='SolForge Fusion'>
+    <h3>SolForge Fusion</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 25–60 min<br>🎂 Wiek: 14–8</div>
+    <button onclick="openModal('solforge-fusion')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Splendor -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Splendor" alt="Splendor"> 
-    <h3>Splendor</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 30–30 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('splendor')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Splendor' alt='Splendor'>
+    <h3>Splendor</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 30–30 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('splendor')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Star Realms -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Star%20Realms" alt="Star Realms"> 
-    <h3>Star Realms</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–2<br> 
-      ⏱️ Czas: 20–20 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('star-realms')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Star%20Realms' alt='Star Realms'>
+    <h3>Star Realms</h3>
+    <div class='details'>👥 Gracze: 2–2<br>⏱️ Czas: 20–20 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('star-realms')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Star Wars: Destiny -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Star%20Wars%3A%20Destiny" alt="Star Wars: Destiny"> 
-    <h3>Star Wars: Destiny</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–2<br> 
-      ⏱️ Czas: 30–30 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('star-wars--destiny')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Star%20Wars%3A%20Destiny' alt='Star Wars: Destiny'>
+    <h3>Star Wars: Destiny</h3>
+    <div class='details'>👥 Gracze: 2–2<br>⏱️ Czas: 30–30 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('star-wars--destiny')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Star Wars: Imperial Assault -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Star%20Wars%3A%20Imperial%20Assault" alt="Star Wars: Imperial Assault"> 
-    <h3>Star Wars: Imperial Assault</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–5<br> 
-      ⏱️ Czas: 60–120 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('star-wars--imperial-assault')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Star%20Wars%3A%20Imperial%20Assault' alt='Star Wars: Imperial Assault'>
+    <h3>Star Wars: Imperial Assault</h3>
+    <div class='details'>👥 Gracze: 2–5<br>⏱️ Czas: 60–120 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('star-wars--imperial-assault')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Star Wars: Rebellion -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Star%20Wars%3A%20Rebellion" alt="Star Wars: Rebellion"> 
-    <h3>Star Wars: Rebellion</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 180–240 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('star-wars--rebellion')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Star%20Wars%3A%20Rebellion' alt='Star Wars: Rebellion'>
+    <h3>Star Wars: Rebellion</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 180–240 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('star-wars--rebellion')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Star Wars: Unlimited -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Star%20Wars%3A%20Unlimited" alt="Star Wars: Unlimited"> 
-    <h3>Star Wars: Unlimited</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 20–20 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('star-wars--unlimited')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Star%20Wars%3A%20Unlimited' alt='Star Wars: Unlimited'>
+    <h3>Star Wars: Unlimited</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 20–20 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('star-wars--unlimited')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: T.I.M.E Stories -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=T.I.M.E%20Stories" alt="T.I.M.E Stories"> 
-    <h3>T.I.M.E Stories</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 90–90 min<br> 
-      🎂 Wiek: 14+ 
-    </div> 
-    <button onclick="openModal('t-i-m-e-stories')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=T.I.M.E%20Stories' alt='T.I.M.E Stories'>
+    <h3>T.I.M.E Stories</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 90–90 min<br>🎂 Wiek: 14+</div>
+    <button onclick="openModal('t-i-m-e-stories')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Talisman (Revised 4th Edition): The Dungeon Expansion -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Talisman%20%28Revised%204th%20Edition%29%3A%20The%20Dungeon%20Expansion" alt="Talisman (Revised 4th Edition): The Dungeon Expansion"> 
-    <h3>Talisman (Revised 4th Edition): The Dungeon Expansion</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–6<br> 
-      ⏱️ Czas: 90–90 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('talisman--revised-4th-edition--the-dungeon-expansion')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Talisman%20%28Revised%204th%20Edition%29%3A%20The%20Dungeon%20Expansion' alt='Talisman (Revised 4th Edition): The Dungeon Expansion'>
+    <h3>Talisman (Revised 4th Edition): The Dungeon Expansion</h3>
+    <div class='details'>👥 Gracze: 2–6<br>⏱️ Czas: 90–90 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('talisman--revised-4th-edition--the-dungeon-expansion')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Talisman (Revised 4th Edition): The Highland Expansion -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Talisman%20%28Revised%204th%20Edition%29%3A%20The%20Highland%20Expansion" alt="Talisman (Revised 4th Edition): The Highland Expansion"> 
-    <h3>Talisman (Revised 4th Edition): The Highland Expansion</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–6<br> 
-      ⏱️ Czas: 90–90 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('talisman--revised-4th-edition--the-highland-expansion')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Talisman%20%28Revised%204th%20Edition%29%3A%20The%20Highland%20Expansion' alt='Talisman (Revised 4th Edition): The Highland Expansion'>
+    <h3>Talisman (Revised 4th Edition): The Highland Expansion</h3>
+    <div class='details'>👥 Gracze: 2–6<br>⏱️ Czas: 90–90 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('talisman--revised-4th-edition--the-highland-expansion')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Talisman (Revised 4th Edition): The Reaper Expansion -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Talisman%20%28Revised%204th%20Edition%29%3A%20The%20Reaper%20Expansion" alt="Talisman (Revised 4th Edition): The Reaper Expansion"> 
-    <h3>Talisman (Revised 4th Edition): The Reaper Expansion</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–6<br> 
-      ⏱️ Czas: 90–90 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('talisman--revised-4th-edition--the-reaper-expansion')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Talisman%20%28Revised%204th%20Edition%29%3A%20The%20Reaper%20Expansion' alt='Talisman (Revised 4th Edition): The Reaper Expansion'>
+    <h3>Talisman (Revised 4th Edition): The Reaper Expansion</h3>
+    <div class='details'>👥 Gracze: 2–6<br>⏱️ Czas: 90–90 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('talisman--revised-4th-edition--the-reaper-expansion')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Talisman: Revised 4th Edition -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Talisman%3A%20Revised%204th%20Edition" alt="Talisman: Revised 4th Edition"> 
-    <h3>Talisman: Revised 4th Edition</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–6<br> 
-      ⏱️ Czas: 90–90 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('talisman--revised-4th-edition')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Talisman%3A%20Revised%204th%20Edition' alt='Talisman: Revised 4th Edition'>
+    <h3>Talisman: Revised 4th Edition</h3>
+    <div class='details'>👥 Gracze: 2–6<br>⏱️ Czas: 90–90 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('talisman--revised-4th-edition')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Tapestry -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Tapestry" alt="Tapestry"> 
-    <h3>Tapestry</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–5<br> 
-      ⏱️ Czas: 90–120 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('tapestry')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Tapestry' alt='Tapestry'>
+    <h3>Tapestry</h3>
+    <div class='details'>👥 Gracze: 1–5<br>⏱️ Czas: 90–120 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('tapestry')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Terraforming Mars: The Dice Game -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Terraforming%20Mars%3A%20The%20Dice%20Game" alt="Terraforming Mars: The Dice Game"> 
-    <h3>Terraforming Mars: The Dice Game</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–4<br> 
-      ⏱️ Czas: 45–45 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('terraforming-mars--the-dice-game')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Terraforming%20Mars%3A%20The%20Dice%20Game' alt='Terraforming Mars: The Dice Game'>
+    <h3>Terraforming Mars: The Dice Game</h3>
+    <div class='details'>👥 Gracze: 1–4<br>⏱️ Czas: 45–45 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('terraforming-mars--the-dice-game')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Terrors of London -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Terrors%20of%20London" alt="Terrors of London"> 
-    <h3>Terrors of London</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–2<br> 
-      ⏱️ Czas: 20–40 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('terrors-of-london')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Terrors%20of%20London' alt='Terrors of London'>
+    <h3>Terrors of London</h3>
+    <div class='details'>👥 Gracze: 2–2<br>⏱️ Czas: 20–40 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('terrors-of-london')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Terrors of London: Servants of the Black Gate -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Terrors%20of%20London%3A%20Servants%20of%20the%20Black%20Gate" alt="Terrors of London: Servants of the Black Gate"> 
-    <h3>Terrors of London: Servants of the Black Gate</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 20–40 min<br> 
-      🎂 Wiek:  
-    </div> 
-    <button onclick="openModal('terrors-of-london--servants-of-the-black-gate')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Terrors%20of%20London%3A%20Servants%20of%20the%20Black%20Gate' alt='Terrors of London: Servants of the Black Gate'>
+    <h3>Terrors of London: Servants of the Black Gate</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 20–40 min<br>🎂 Wiek: </div>
+    <button onclick="openModal('terrors-of-london--servants-of-the-black-gate')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Terrors of London: The Reptile Tomb -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Terrors%20of%20London%3A%20The%20Reptile%20Tomb" alt="Terrors of London: The Reptile Tomb"> 
-    <h3>Terrors of London: The Reptile Tomb</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 20–40 min<br> 
-      🎂 Wiek:  
-    </div> 
-    <button onclick="openModal('terrors-of-london--the-reptile-tomb')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Terrors%20of%20London%3A%20The%20Reptile%20Tomb' alt='Terrors of London: The Reptile Tomb'>
+    <h3>Terrors of London: The Reptile Tomb</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 20–40 min<br>🎂 Wiek: </div>
+    <button onclick="openModal('terrors-of-london--the-reptile-tomb')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Through the Ages: A New Story of Civilization -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Through%20the%20Ages%3A%20A%20New%20Story%20of%20Civilization" alt="Through the Ages: A New Story of Civilization"> 
-    <h3>Through the Ages: A New Story of Civilization</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 120–120 min<br> 
-      🎂 Wiek: 14+ 
-    </div> 
-    <button onclick="openModal('through-the-ages--a-new-story-of-civilization')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Through%20the%20Ages%3A%20A%20New%20Story%20of%20Civilization' alt='Through the Ages: A New Story of Civilization'>
+    <h3>Through the Ages: A New Story of Civilization</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 120–120 min<br>🎂 Wiek: 14+</div>
+    <button onclick="openModal('through-the-ages--a-new-story-of-civilization')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Thunderstone Advance: Worlds Collide -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Thunderstone%20Advance%3A%20Worlds%20Collide" alt="Thunderstone Advance: Worlds Collide"> 
-    <h3>Thunderstone Advance: Worlds Collide</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–5<br> 
-      ⏱️ Czas: 60–60 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('thunderstone-advance--worlds-collide')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Thunderstone%20Advance%3A%20Worlds%20Collide' alt='Thunderstone Advance: Worlds Collide'>
+    <h3>Thunderstone Advance: Worlds Collide</h3>
+    <div class='details'>👥 Gracze: 1–5<br>⏱️ Czas: 60–60 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('thunderstone-advance--worlds-collide')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Ticket to Ride: Europe -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Ticket%20to%20Ride%3A%20Europe" alt="Ticket to Ride: Europe"> 
-    <h3>Ticket to Ride: Europe</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–5<br> 
-      ⏱️ Czas: 30–60 min<br> 
-      🎂 Wiek: 8+ 
-    </div> 
-    <button onclick="openModal('ticket-to-ride--europe')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Ticket%20to%20Ride%3A%20Europe' alt='Ticket to Ride: Europe'>
+    <h3>Ticket to Ride: Europe</h3>
+    <div class='details'>👥 Gracze: 2–5<br>⏱️ Czas: 30–60 min<br>🎂 Wiek: 8+</div>
+    <button onclick="openModal('ticket-to-ride--europe')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Timeline: Polska -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Timeline%3A%20Polska" alt="Timeline: Polska"> 
-    <h3>Timeline: Polska</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–8<br> 
-      ⏱️ Czas: 15–15 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('timeline--polska')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Timeline%3A%20Polska' alt='Timeline: Polska'>
+    <h3>Timeline: Polska</h3>
+    <div class='details'>👥 Gracze: 2–8<br>⏱️ Czas: 15–15 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('timeline--polska')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Unmatched: For King and Country -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Unmatched%3A%20For%20King%20and%20Country" alt="Unmatched: For King and Country"> 
-    <h3>Unmatched: For King and Country</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–3<br> 
-      ⏱️ Czas: 20–40 min<br> 
-      🎂 Wiek: 12 
-    </div> 
-    <button onclick="openModal('unmatched--for-king-and-country')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Unmatched%3A%20For%20King%20and%20Country' alt='Unmatched: For King and Country'>
+    <h3>Unmatched: For King and Country</h3>
+    <div class='details'>👥 Gracze: 2–3<br>⏱️ Czas: 20–40 min<br>🎂 Wiek: 12</div>
+    <button onclick="openModal('unmatched--for-king-and-country')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Warhammer: Invasion -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Warhammer%3A%20Invasion" alt="Warhammer: Invasion"> 
-    <h3>Warhammer: Invasion</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–2<br> 
-      ⏱️ Czas: 45–45 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('warhammer--invasion')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Warhammer%3A%20Invasion' alt='Warhammer: Invasion'>
+    <h3>Warhammer: Invasion</h3>
+    <div class='details'>👥 Gracze: 2–2<br>⏱️ Czas: 45–45 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('warhammer--invasion')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Yamataï -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Yamata%C3%AF" alt="Yamataï"> 
-    <h3>Yamataï</h3> 
-    <div class="details"> 
-      👥 Gracze: 2–4<br> 
-      ⏱️ Czas: 40–80 min<br> 
-      🎂 Wiek: 12+ 
-    </div> 
-    <button onclick="openModal('yamata-')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Yamata%C3%AF' alt='Yamataï'>
+    <h3>Yamataï</h3>
+    <div class='details'>👥 Gracze: 2–4<br>⏱️ Czas: 40–80 min<br>🎂 Wiek: 12+</div>
+    <button onclick="openModal('yamata-')">Skrót zasad</button>
   </div>
 
 
   <!-- AUTO: Zombicide -->
-  <div class="card"> 
-    <img src="https://via.placeholder.com/400x200?text=Zombicide" alt="Zombicide"> 
-    <h3>Zombicide</h3> 
-    <div class="details"> 
-      👥 Gracze: 1–6<br> 
-      ⏱️ Czas: 60–60 min<br> 
-      🎂 Wiek: 10+ 
-    </div> 
-    <button onclick="openModal('zombicide')">Skrót zasad</button> 
+  <div class='card'>
+    <img src='https://via.placeholder.com/400x200?text=Zombicide' alt='Zombicide'>
+    <h3>Zombicide</h3>
+    <div class='details'>👥 Gracze: 1–6<br>⏱️ Czas: 60–60 min<br>🎂 Wiek: 10+</div>
+    <button onclick="openModal('zombicide')">Skrót zasad</button>
   </div>
 
 </div>
 
-<!-- Modale -->
-<div id="modal-catan" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('catan')">&times;</span>
-    <h3>Catan - Skrót zasad</h3>
-    <p>Buduj osady, zbieraj surowce i handluj.</p>
+<div id='modal-catan' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('catan')">&times;</span>
+    <h3>Catan – Skrót zasad</h3>
+    <p><b>Jak rozłożyć grę</b><br>– Złóż ramkę morza i ułóż 19 heksów; rozłóż żetony liczb; rozbójnik na pustyni.<br>– Każdy kładzie 2 osady i 2 drogi (kolejność węża); po drugiej osadzie dobiera surowce.</p><p><b>Jak grać</b><br>Rzut 2 kośćmi → produkcja; handel (z graczami/portami); budowa dróg, osad, miast; karty rozwoju. Przy 7 przesuwasz rozbójnika.</p><p><b>Koniec</b><br>Pierwszy do <b>10 PZ</b> (budowle, karty VP, Najdłuższa Droga, Największa Armia).</p>
   </div>
 </div>
 
-<div id="modal-carcassonne" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('carcassonne')">&times;</span>
-    <h3>Carcassonne - Skrót zasad</h3>
-    <p>Układaj kafelki i zdobywaj punkty.</p>
+
+<div id='modal-carcassonne' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('carcassonne')">&times;</span>
+    <h3>Carcassonne – Skrót zasad</h3>
+    <p><b>Jak rozłożyć grę</b><br>– Płytka startowa; potasuj resztę; każdy 7 meepli i pion na tor.</p><p><b>Jak grać</b><br>Dobierz i dołóż płytkę (krawędzie muszą pasować) → opcjonalnie postaw meepla → jeśli ukończysz drogę/miasto/klasztor, punktuj i zdejmij meeple.</p><p><b>Koniec</b><br>Po wyczerpaniu płytek podlicz niedokończone obszary (i pola, jeśli gracie). Najwięcej PZ wygrywa.</p>
   </div>
 </div>
 
-<div id="modal-5-minute-dungeon" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('5-minute-dungeon')">&times;</span> 
-    <h3>5-Minute Dungeon - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+
+<div id='modal-5-minute-dungeon' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('5-minute-dungeon')">&times;</span>
+    <h3>5-Minute Dungeon – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-51st-state--master-set" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('51st-state--master-set')">&times;</span> 
-    <h3>51st State: Master Set - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-51st-state--master-set' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('51st-state--master-set')">&times;</span>
+    <h3>51st State: Master Set – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-51st-state--master-set---allies" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('51st-state--master-set---allies')">&times;</span> 
-    <h3>51st State: Master Set – Allies - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-51st-state--master-set---allies' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('51st-state--master-set---allies')">&times;</span>
+    <h3>51st State: Master Set – Allies – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-51st-state--master-set---scavengers" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('51st-state--master-set---scavengers')">&times;</span> 
-    <h3>51st State: Master Set – Scavengers - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-51st-state--master-set---scavengers' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('51st-state--master-set---scavengers')">&times;</span>
+    <h3>51st State: Master Set – Scavengers – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-7-wonders-duel" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('7-wonders-duel')">&times;</span> 
-    <h3>7 Wonders Duel - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-7-wonders-duel' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('7-wonders-duel')">&times;</span>
+    <h3>7 Wonders Duel – Skrót zasad</h3>
+    <p><b>Jak rozłożyć grę</b><br>– Plansza konfliktu, pion na środku; 4 żetony milit., 5 żetonów postępu; po 7 monet; układ kart Wieku I; draft 4 cudów/os.</p><p><b>Jak grać</b><br>Wybierz dostępną kartę i: <i>zbuduj</i>, <i>zbuduj cud</i> (wsuń kartę), albo <i>odrzuć za monety</i>. Czerwone → konflikt; zielone → nauka; żółte → handel.</p><p><b>Koniec</b><br>Natychmiast przy <b>militarnej</b> lub <b>naukowej</b> dominacji; inaczej po Wieku III liczycie PZ.</p>
+  </div>
 </div>
 
 
-<div id="modal-the-7th-continent" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('the-7th-continent')">&times;</span> 
-    <h3>The 7th Continent - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-the-7th-continent' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('the-7th-continent')">&times;</span>
+    <h3>The 7th Continent – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-abomination--the-heir-of-frankenstein" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('abomination--the-heir-of-frankenstein')">&times;</span> 
-    <h3>Abomination: The Heir of Frankenstein - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-abomination--the-heir-of-frankenstein' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('abomination--the-heir-of-frankenstein')">&times;</span>
+    <h3>Abomination: The Heir of Frankenstein – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-aeon-s-end--the-outer-dark" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('aeon-s-end--the-outer-dark')">&times;</span> 
-    <h3>Aeon&#x27;s End: The Outer Dark - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-aeon-s-end--the-outer-dark' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('aeon-s-end--the-outer-dark')">&times;</span>
+    <h3>Aeon&#x27;s End: The Outer Dark – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-aeon-s-end--war-eternal" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('aeon-s-end--war-eternal')">&times;</span> 
-    <h3>Aeon&#x27;s End: War Eternal - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-aeon-s-end--war-eternal' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('aeon-s-end--war-eternal')">&times;</span>
+    <h3>Aeon&#x27;s End: War Eternal – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-agricola" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('agricola')">&times;</span> 
-    <h3>Agricola - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-agricola' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('agricola')">&times;</span>
+    <h3>Agricola – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-arkham-horror" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('arkham-horror')">&times;</span> 
-    <h3>Arkham Horror - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-arkham-horror' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('arkham-horror')">&times;</span>
+    <h3>Arkham Horror – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-arkham-horror--dunwich-horror-expansion" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('arkham-horror--dunwich-horror-expansion')">&times;</span> 
-    <h3>Arkham Horror: Dunwich Horror Expansion - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-arkham-horror--dunwich-horror-expansion' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('arkham-horror--dunwich-horror-expansion')">&times;</span>
+    <h3>Arkham Horror: Dunwich Horror Expansion – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-arkham-horror--the-card-game" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('arkham-horror--the-card-game')">&times;</span> 
-    <h3>Arkham Horror: The Card Game - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-arkham-horror--the-card-game' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('arkham-horror--the-card-game')">&times;</span>
+    <h3>Arkham Horror: The Card Game – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-arkham-horror--the-card-game---the-dunwich-legacy--expansion" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('arkham-horror--the-card-game---the-dunwich-legacy--expansion')">&times;</span> 
-    <h3>Arkham Horror: The Card Game – The Dunwich Legacy: Expansion - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-arkham-horror--the-card-game---the-dunwich-legacy--expansion' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('arkham-horror--the-card-game---the-dunwich-legacy--expansion')">&times;</span>
+    <h3>Arkham Horror: The Card Game – The Dunwich Legacy: Expansion – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-bang--the-dice-game" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('bang--the-dice-game')">&times;</span> 
-    <h3>BANG! The Dice Game - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-bang--the-dice-game' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('bang--the-dice-game')">&times;</span>
+    <h3>BANG! The Dice Game – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-blood-of-the-northmen" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('blood-of-the-northmen')">&times;</span> 
-    <h3>Blood of the Northmen - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-blood-of-the-northmen' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('blood-of-the-northmen')">&times;</span>
+    <h3>Blood of the Northmen – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-bonfire" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('bonfire')">&times;</span> 
-    <h3>Bonfire - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-bonfire' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('bonfire')">&times;</span>
+    <h3>Bonfire – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-brass--birmingham" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('brass--birmingham')">&times;</span> 
-    <h3>Brass: Birmingham - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-brass--birmingham' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('brass--birmingham')">&times;</span>
+    <h3>Brass: Birmingham – Skrót zasad</h3>
+    <p><b>Jak rozłożyć grę</b><br>– Plansza, rynki węgla/żeliwa, talia; każdy 8 kart; kupcy i beczki na planszy.</p><p><b>Jak grać</b><br>2 ery: <i>kanały</i> i <i>koleje</i>. W turze 2 akcje za odrzucenie kart: buduj, łącz, rozwijaj, sprzedaj (flip), skautuj, pożyczka. Dochód/inicjatywa wg wydatków.</p><p><b>Koniec</b><br>Punkty po każdej erze za odwrócone kafle i łącza. Po erze kolejowej wygrywa najwięcej PZ.</p>
+  </div>
 </div>
 
 
-<div id="modal-cartographers" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('cartographers')">&times;</span> 
-    <h3>Cartographers - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-cartographers' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('cartographers')">&times;</span>
+    <h3>Cartographers – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-cascadia" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('cascadia')">&times;</span> 
-    <h3>Cascadia - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-cascadia' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('cascadia')">&times;</span>
+    <h3>Cascadia – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-the-castles-of-burgundy" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('the-castles-of-burgundy')">&times;</span> 
-    <h3>The Castles of Burgundy - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-the-castles-of-burgundy' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('the-castles-of-burgundy')">&times;</span>
+    <h3>The Castles of Burgundy – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-charterstone" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('charterstone')">&times;</span> 
-    <h3>Charterstone - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-charterstone' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('charterstone')">&times;</span>
+    <h3>Charterstone – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-chronicles-of-avel" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('chronicles-of-avel')">&times;</span> 
-    <h3>Chronicles of Avel - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-chronicles-of-avel' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('chronicles-of-avel')">&times;</span>
+    <h3>Chronicles of Avel – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-chronicles-of-avel--adventurer-s-toolkit" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('chronicles-of-avel--adventurer-s-toolkit')">&times;</span> 
-    <h3>Chronicles of Avel: Adventurer&#x27;s Toolkit - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-chronicles-of-avel--adventurer-s-toolkit' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('chronicles-of-avel--adventurer-s-toolkit')">&times;</span>
+    <h3>Chronicles of Avel: Adventurer&#x27;s Toolkit – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-chronicles-of-avel--new-adventures" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('chronicles-of-avel--new-adventures')">&times;</span> 
-    <h3>Chronicles of Avel: New Adventures - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-chronicles-of-avel--new-adventures' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('chronicles-of-avel--new-adventures')">&times;</span>
+    <h3>Chronicles of Avel: New Adventures – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-chronicles-of-crime" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('chronicles-of-crime')">&times;</span> 
-    <h3>Chronicles of Crime - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-chronicles-of-crime' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('chronicles-of-crime')">&times;</span>
+    <h3>Chronicles of Crime – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-chronicles-of-crime--1400" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('chronicles-of-crime--1400')">&times;</span> 
-    <h3>Chronicles of Crime: 1400 - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-chronicles-of-crime--1400' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('chronicles-of-crime--1400')">&times;</span>
+    <h3>Chronicles of Crime: 1400 – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-chronicles-of-crime--1900" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('chronicles-of-crime--1900')">&times;</span> 
-    <h3>Chronicles of Crime: 1900 - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-chronicles-of-crime--1900' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('chronicles-of-crime--1900')">&times;</span>
+    <h3>Chronicles of Crime: 1900 – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-chronicles-of-crime--2400" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('chronicles-of-crime--2400')">&times;</span> 
-    <h3>Chronicles of Crime: 2400 - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-chronicles-of-crime--2400' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('chronicles-of-crime--2400')">&times;</span>
+    <h3>Chronicles of Crime: 2400 – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-clank--a-deck-building-adventure" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('clank--a-deck-building-adventure')">&times;</span> 
-    <h3>Clank!: A Deck-Building Adventure - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-clank--a-deck-building-adventure' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('clank--a-deck-building-adventure')">&times;</span>
+    <h3>Clank!: A Deck-Building Adventure – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-clank--adventuring-party" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('clank--adventuring-party')">&times;</span> 
-    <h3>Clank!: Adventuring Party - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-clank--adventuring-party' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('clank--adventuring-party')">&times;</span>
+    <h3>Clank!: Adventuring Party – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-clank--the-mummy-s-curse" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('clank--the-mummy-s-curse')">&times;</span> 
-    <h3>Clank!: The Mummy&#x27;s Curse - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-clank--the-mummy-s-curse' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('clank--the-mummy-s-curse')">&times;</span>
+    <h3>Clank!: The Mummy&#x27;s Curse – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-clever-4ever" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('clever-4ever')">&times;</span> 
-    <h3>Clever 4Ever - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-clever-4ever' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('clever-4ever')">&times;</span>
+    <h3>Clever 4Ever – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-c-atl" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('c-atl')">&times;</span> 
-    <h3>Cóatl - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-c-atl' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('c-atl')">&times;</span>
+    <h3>Cóatl – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-codenames" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('codenames')">&times;</span> 
-    <h3>Codenames - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-codenames' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('codenames')">&times;</span>
+    <h3>Codenames – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-codenames--pictures" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('codenames--pictures')">&times;</span> 
-    <h3>Codenames: Pictures - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-codenames--pictures' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('codenames--pictures')">&times;</span>
+    <h3>Codenames: Pictures – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-the-crew--mission-deep-sea" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('the-crew--mission-deep-sea')">&times;</span> 
-    <h3>The Crew: Mission Deep Sea - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-the-crew--mission-deep-sea' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('the-crew--mission-deep-sea')">&times;</span>
+    <h3>The Crew: Mission Deep Sea – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-crime-zoom--his-last-card" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('crime-zoom--his-last-card')">&times;</span> 
-    <h3>Crime Zoom: His Last Card - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-crime-zoom--his-last-card' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('crime-zoom--his-last-card')">&times;</span>
+    <h3>Crime Zoom: His Last Card – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-descent--journeys-in-the-dark--second-edition-" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('descent--journeys-in-the-dark--second-edition-')">&times;</span> 
-    <h3>Descent: Journeys in the Dark (Second Edition) - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-descent--journeys-in-the-dark--second-edition-' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('descent--journeys-in-the-dark--second-edition-')">&times;</span>
+    <h3>Descent: Journeys in the Dark (Second Edition) – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-destinies" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('destinies')">&times;</span> 
-    <h3>Destinies - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-destinies' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('destinies')">&times;</span>
+    <h3>Destinies – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-dice-throne--season-one-rerolled---battle-1---barbarian-v--moon-elf" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('dice-throne--season-one-rerolled---battle-1---barbarian-v--moon-elf')">&times;</span> 
-    <h3>Dice Throne: Season One Rerolled – Battle 1:  Barbarian v. Moon Elf - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-dice-throne--season-one-rerolled---battle-1---barbarian-v--moon-elf' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('dice-throne--season-one-rerolled---battle-1---barbarian-v--moon-elf')">&times;</span>
+    <h3>Dice Throne: Season One Rerolled – Battle 1:  Barbarian v. Moon Elf – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-dominion" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('dominion')">&times;</span> 
-    <h3>Dominion - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-dominion' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('dominion')">&times;</span>
+    <h3>Dominion – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-escape--the-curse-of-the-temple" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('escape--the-curse-of-the-temple')">&times;</span> 
-    <h3>Escape: The Curse of the Temple - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-escape--the-curse-of-the-temple' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('escape--the-curse-of-the-temple')">&times;</span>
+    <h3>Escape: The Curse of the Temple – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-everdell" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('everdell')">&times;</span> 
-    <h3>Everdell - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-everdell' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('everdell')">&times;</span>
+    <h3>Everdell – Skrót zasad</h3>
+    <p><b>Jak rozłożyć grę</b><br>– Plansza + Ever Tree; 8 kart w Łące; 4 Wydarzenia podstawowe + 4 specjalne; karty Lasu wg graczy; start 2 robotników.</p><p><b>Jak grać</b><br>W turze: umieść robotnika / zagraj kartę (Budowla/Stworzenie) / przygotuj porę roku (odzyskaj robotników, odblokuj nowych). Limit miasta 15 kart.</p><p><b>Koniec</b><br>Po Jesieni liczycie PZ z kart, Wydarzeń i Podróży.</p>
+  </div>
 </div>
 
 
-<div id="modal-everdell--pearlbrook" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('everdell--pearlbrook')">&times;</span> 
-    <h3>Everdell: Pearlbrook - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-everdell--pearlbrook' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('everdell--pearlbrook')">&times;</span>
+    <h3>Everdell: Pearlbrook – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-exit--the-game---dead-man-on-the-orient-express" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('exit--the-game---dead-man-on-the-orient-express')">&times;</span> 
-    <h3>EXIT: The Game – Dead Man on the Orient Express - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-exit--the-game---dead-man-on-the-orient-express' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('exit--the-game---dead-man-on-the-orient-express')">&times;</span>
+    <h3>EXIT: The Game – Dead Man on the Orient Express – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-exit--the-game---the-pharaoh-s-tomb" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('exit--the-game---the-pharaoh-s-tomb')">&times;</span> 
-    <h3>EXIT: The Game – The Pharaoh&#x27;s Tomb - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-exit--the-game---the-pharaoh-s-tomb' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('exit--the-game---the-pharaoh-s-tomb')">&times;</span>
+    <h3>EXIT: The Game – The Pharaoh&#x27;s Tomb – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-flip-7" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('flip-7')">&times;</span> 
-    <h3>Flip 7 - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-flip-7' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('flip-7')">&times;</span>
+    <h3>Flip 7 – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-fury-of-dracula--third-fourth-edition-" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('fury-of-dracula--third-fourth-edition-')">&times;</span> 
-    <h3>Fury of Dracula (Third/Fourth Edition) - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-fury-of-dracula--third-fourth-edition-' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('fury-of-dracula--third-fourth-edition-')">&times;</span>
+    <h3>Fury of Dracula (Third/Fourth Edition) – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-gierki-ma-e-skie" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('gierki-ma-e-skie')">&times;</span> 
-    <h3>Gierki Ma??e?skie - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-gierki-ma-e-skie' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('gierki-ma-e-skie')">&times;</span>
+    <h3>Gierki Ma??e?skie – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-gloomhaven" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('gloomhaven')">&times;</span> 
-    <h3>Gloomhaven - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-gloomhaven' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('gloomhaven')">&times;</span>
+    <h3>Gloomhaven – Skrót zasad</h3>
+    <p><b>Jak rozłożyć grę</b><br>– Wybierz scenariusz, ułóż mapę, przygotuj talie potworów/AI i modyfikatorów; wybierz postacie i ich ręce.</p><p><b>Jak grać</b><br>Runda: wybierz 2 karty, ujawnij inicjatywę; wykonaj górę jednej i dół drugiej; potwory działają wg AI; odpoczynek krótki/długi odzyskuje karty.</p><p><b>Koniec</b><br>Sukces po spełnieniu celu scenariusza; porażka, gdy wszystkie postacie się wyczerpią.</p>
+  </div>
 </div>
 
 
-<div id="modal-gloomhaven--jaws-of-the-lion" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('gloomhaven--jaws-of-the-lion')">&times;</span> 
-    <h3>Gloomhaven: Jaws of the Lion - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-gloomhaven--jaws-of-the-lion' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('gloomhaven--jaws-of-the-lion')">&times;</span>
+    <h3>Gloomhaven: Jaws of the Lion – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-glory-to-rome" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('glory-to-rome')">&times;</span> 
-    <h3>Glory to Rome - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-glory-to-rome' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('glory-to-rome')">&times;</span>
+    <h3>Glory to Rome – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-hero-realms" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('hero-realms')">&times;</span> 
-    <h3>Hero Realms - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-hero-realms' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('hero-realms')">&times;</span>
+    <h3>Hero Realms – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-hero-realms--boss-deck---lich" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('hero-realms--boss-deck---lich')">&times;</span> 
-    <h3>Hero Realms: Boss Deck – Lich - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-hero-realms--boss-deck---lich' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('hero-realms--boss-deck---lich')">&times;</span>
+    <h3>Hero Realms: Boss Deck – Lich – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-hero-realms--boss-deck---the-dragon" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('hero-realms--boss-deck---the-dragon')">&times;</span> 
-    <h3>Hero Realms: Boss Deck – The Dragon - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-hero-realms--boss-deck---the-dragon' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('hero-realms--boss-deck---the-dragon')">&times;</span>
+    <h3>Hero Realms: Boss Deck – The Dragon – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-hero-realms--character-pack---cleric" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('hero-realms--character-pack---cleric')">&times;</span> 
-    <h3>Hero Realms: Character Pack – Cleric - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-hero-realms--character-pack---cleric' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('hero-realms--character-pack---cleric')">&times;</span>
+    <h3>Hero Realms: Character Pack – Cleric – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-hero-realms--character-pack---fighter" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('hero-realms--character-pack---fighter')">&times;</span> 
-    <h3>Hero Realms: Character Pack – Fighter - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-hero-realms--character-pack---fighter' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('hero-realms--character-pack---fighter')">&times;</span>
+    <h3>Hero Realms: Character Pack – Fighter – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-hero-realms--character-pack---ranger" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('hero-realms--character-pack---ranger')">&times;</span> 
-    <h3>Hero Realms: Character Pack – Ranger - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-hero-realms--character-pack---ranger' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('hero-realms--character-pack---ranger')">&times;</span>
+    <h3>Hero Realms: Character Pack – Ranger – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-hero-realms--character-pack---thief" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('hero-realms--character-pack---thief')">&times;</span> 
-    <h3>Hero Realms: Character Pack – Thief - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-hero-realms--character-pack---thief' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('hero-realms--character-pack---thief')">&times;</span>
+    <h3>Hero Realms: Character Pack – Thief – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-hero-realms--character-pack---wizard" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('hero-realms--character-pack---wizard')">&times;</span> 
-    <h3>Hero Realms: Character Pack – Wizard - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-hero-realms--character-pack---wizard' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('hero-realms--character-pack---wizard')">&times;</span>
+    <h3>Hero Realms: Character Pack – Wizard – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-hero-realms--the-lost-village-campaign-deck" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('hero-realms--the-lost-village-campaign-deck')">&times;</span> 
-    <h3>Hero Realms: The Lost Village Campaign Deck - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-hero-realms--the-lost-village-campaign-deck' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('hero-realms--the-lost-village-campaign-deck')">&times;</span>
+    <h3>Hero Realms: The Lost Village Campaign Deck – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-hero-realms--the-ruin-of-thandar-campaign-deck" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('hero-realms--the-ruin-of-thandar-campaign-deck')">&times;</span> 
-    <h3>Hero Realms: The Ruin of Thandar Campaign Deck - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-hero-realms--the-ruin-of-thandar-campaign-deck' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('hero-realms--the-ruin-of-thandar-campaign-deck')">&times;</span>
+    <h3>Hero Realms: The Ruin of Thandar Campaign Deck – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-horrified" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('horrified')">&times;</span> 
-    <h3>Horrified - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-horrified' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('horrified')">&times;</span>
+    <h3>Horrified – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-imperial-settlers--empires-of-the-north" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('imperial-settlers--empires-of-the-north')">&times;</span> 
-    <h3>Imperial Settlers: Empires of the North - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-imperial-settlers--empires-of-the-north' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('imperial-settlers--empires-of-the-north')">&times;</span>
+    <h3>Imperial Settlers: Empires of the North – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-imperial-settlers--roll---write" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('imperial-settlers--roll---write')">&times;</span> 
-    <h3>Imperial Settlers: Roll &amp; Write - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-imperial-settlers--roll---write' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('imperial-settlers--roll---write')">&times;</span>
+    <h3>Imperial Settlers: Roll &amp; Write – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-it-s-a-wonderful-kingdom" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('it-s-a-wonderful-kingdom')">&times;</span> 
-    <h3>It&#x27;s a Wonderful Kingdom - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-it-s-a-wonderful-kingdom' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('it-s-a-wonderful-kingdom')">&times;</span>
+    <h3>It&#x27;s a Wonderful Kingdom – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-jakub-w-drowycz--dziki-samogon" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('jakub-w-drowycz--dziki-samogon')">&times;</span> 
-    <h3>Jakub W?drowycz: Dziki Samogon - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-jakub-w-drowycz--dziki-samogon' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('jakub-w-drowycz--dziki-samogon')">&times;</span>
+    <h3>Jakub W?drowycz: Dziki Samogon – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-journal-29-revelation--interactive-book-game" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('journal-29-revelation--interactive-book-game')">&times;</span> 
-    <h3>Journal 29 Revelation: Interactive Book Game - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-journal-29-revelation--interactive-book-game' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('journal-29-revelation--interactive-book-game')">&times;</span>
+    <h3>Journal 29 Revelation: Interactive Book Game – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-keyforge--age-of-ascension" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('keyforge--age-of-ascension')">&times;</span> 
-    <h3>KeyForge: Age of Ascension - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-keyforge--age-of-ascension' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('keyforge--age-of-ascension')">&times;</span>
+    <h3>KeyForge: Age of Ascension – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-kingdom-builder" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('kingdom-builder')">&times;</span> 
-    <h3>Kingdom Builder - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-kingdom-builder' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('kingdom-builder')">&times;</span>
+    <h3>Kingdom Builder – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-last-bastion" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('last-bastion')">&times;</span> 
-    <h3>Last Bastion - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-last-bastion' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('last-bastion')">&times;</span>
+    <h3>Last Bastion – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-little-alchemists" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('little-alchemists')">&times;</span> 
-    <h3>Little Alchemists - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-little-alchemists' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('little-alchemists')">&times;</span>
+    <h3>Little Alchemists – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-lost-ruins-of-arnak" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('lost-ruins-of-arnak')">&times;</span> 
-    <h3>Lost Ruins of Arnak - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-lost-ruins-of-arnak' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('lost-ruins-of-arnak')">&times;</span>
+    <h3>Lost Ruins of Arnak – Skrót zasad</h3>
+    <p><b>Jak rozłożyć grę</b><br>– Plansza, tor badań, asystenci, rynek kart, miejsca wykopalisk i idole; talie startowe i zasoby dla graczy.</p><p><b>Jak grać</b><br>Na turę 1 główna akcja: wykop (robotnik + koszt podróży), odkryj miejsce (kompasy), kup kartę, awansuj na torze badań, pokonaj strażnika; oraz akcje darmowe.</p><p><b>Koniec</b><br>Po 5 rundach punktujesz tor badań, idole, miejsca/strażników, karty; <i>Strach</i> to kary.</p>
+  </div>
 </div>
 
 
-<div id="modal-mafia" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('mafia')">&times;</span> 
-    <h3>Mafia - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-mafia' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('mafia')">&times;</span>
+    <h3>Mafia – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-magic--the-gathering" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('magic--the-gathering')">&times;</span> 
-    <h3>Magic: The Gathering - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-magic--the-gathering' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('magic--the-gathering')">&times;</span>
+    <h3>Magic: The Gathering – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-mlem--space-agency" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('mlem--space-agency')">&times;</span> 
-    <h3>MLEM: Space Agency - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-mlem--space-agency' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('mlem--space-agency')">&times;</span>
+    <h3>MLEM: Space Agency – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-mr--jack" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('mr--jack')">&times;</span> 
-    <h3>Mr. Jack - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-mr--jack' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('mr--jack')">&times;</span>
+    <h3>Mr. Jack – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-munchkin" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('munchkin')">&times;</span> 
-    <h3>Munchkin - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-munchkin' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('munchkin')">&times;</span>
+    <h3>Munchkin – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-neuroshima-hex" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('neuroshima-hex')">&times;</span> 
-    <h3>Neuroshima Hex - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-neuroshima-hex' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('neuroshima-hex')">&times;</span>
+    <h3>Neuroshima Hex – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-new-frontiers" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('new-frontiers')">&times;</span> 
-    <h3>New Frontiers - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-new-frontiers' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('new-frontiers')">&times;</span>
+    <h3>New Frontiers – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-nightfall" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('nightfall')">&times;</span> 
-    <h3>Nightfall - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-nightfall' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('nightfall')">&times;</span>
+    <h3>Nightfall – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-nightfall--martial-law" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('nightfall--martial-law')">&times;</span> 
-    <h3>Nightfall: Martial Law - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-nightfall--martial-law' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('nightfall--martial-law')">&times;</span>
+    <h3>Nightfall: Martial Law – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-nova-luna" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('nova-luna')">&times;</span> 
-    <h3>Nova Luna - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-nova-luna' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('nova-luna')">&times;</span>
+    <h3>Nova Luna – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-one-deck-dungeon" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('one-deck-dungeon')">&times;</span> 
-    <h3>One Deck Dungeon - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-one-deck-dungeon' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('one-deck-dungeon')">&times;</span>
+    <h3>One Deck Dungeon – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-one-night-ultimate-werewolf" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('one-night-ultimate-werewolf')">&times;</span> 
-    <h3>One Night Ultimate Werewolf - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-one-night-ultimate-werewolf' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('one-night-ultimate-werewolf')">&times;</span>
+    <h3>One Night Ultimate Werewolf – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-orl-ans" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('orl-ans')">&times;</span> 
-    <h3>Orléans - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-orl-ans' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('orl-ans')">&times;</span>
+    <h3>Orléans – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-orl-ans--trade---intrigue" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('orl-ans--trade---intrigue')">&times;</span> 
-    <h3>Orléans: Trade &amp; Intrigue - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-orl-ans--trade---intrigue' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('orl-ans--trade---intrigue')">&times;</span>
+    <h3>Orléans: Trade &amp; Intrigue – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-paladins-of-the-west-kingdom" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('paladins-of-the-west-kingdom')">&times;</span> 
-    <h3>Paladins of the West Kingdom - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-paladins-of-the-west-kingdom' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('paladins-of-the-west-kingdom')">&times;</span>
+    <h3>Paladins of the West Kingdom – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-pandemic" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('pandemic')">&times;</span> 
-    <h3>Pandemic - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-pandemic' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('pandemic')">&times;</span>
+    <h3>Pandemic – Skrót zasad</h3>
+    <p><b>Jak rozłożyć grę</b><br>– Stacja w Atlancie; rozłóż znaczniki; zainfekuj 9 miast (3×3/2/1); przygotuj talię z epidemiami; role i karty startowe.</p><p><b>Jak grać</b><br>Tura: 4 akcje (ruch, leczenie, stacja, wymiana wiedzy, odkrycie leku), dobierz 2 karty, zainfekuj miasta/epidemia. Gra kooperacyjna.</p><p><b>Koniec</b><br>Wygrana: wszystkie 4 leki. Przegrana: talia się skończy, za dużo wylewów lub brak kostek koloru.</p>
+  </div>
 </div>
 
 
-<div id="modal-the-quest-for-el-dorado" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('the-quest-for-el-dorado')">&times;</span> 
-    <h3>The Quest for El Dorado - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-the-quest-for-el-dorado' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('the-quest-for-el-dorado')">&times;</span>
+    <h3>The Quest for El Dorado – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-the-quest-for-el-dorado--heroes---hexes" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('the-quest-for-el-dorado--heroes---hexes')">&times;</span> 
-    <h3>The Quest for El Dorado: Heroes &amp; Hexes - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-the-quest-for-el-dorado--heroes---hexes' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('the-quest-for-el-dorado--heroes---hexes')">&times;</span>
+    <h3>The Quest for El Dorado: Heroes &amp; Hexes – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-radlands" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('radlands')">&times;</span> 
-    <h3>Radlands - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-radlands' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('radlands')">&times;</span>
+    <h3>Radlands – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-reef" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('reef')">&times;</span> 
-    <h3>Reef - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-reef' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('reef')">&times;</span>
+    <h3>Reef – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-res-arcana" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('res-arcana')">&times;</span> 
-    <h3>Res Arcana - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-res-arcana' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('res-arcana')">&times;</span>
+    <h3>Res Arcana – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-res-arcana--lux-et-tenebrae" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('res-arcana--lux-et-tenebrae')">&times;</span> 
-    <h3>Res Arcana: Lux et Tenebrae - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-res-arcana--lux-et-tenebrae' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('res-arcana--lux-et-tenebrae')">&times;</span>
+    <h3>Res Arcana: Lux et Tenebrae – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-res-arcana--perlae-imperii" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('res-arcana--perlae-imperii')">&times;</span> 
-    <h3>Res Arcana: Perlae Imperii - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-res-arcana--perlae-imperii' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('res-arcana--perlae-imperii')">&times;</span>
+    <h3>Res Arcana: Perlae Imperii – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-risk--godstorm" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('risk--godstorm')">&times;</span> 
-    <h3>Risk: Godstorm - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-risk--godstorm' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('risk--godstorm')">&times;</span>
+    <h3>Risk: Godstorm – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-robinson-crusoe--adventures-on-the-cursed-island" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('robinson-crusoe--adventures-on-the-cursed-island')">&times;</span> 
-    <h3>Robinson Crusoe: Adventures on the Cursed Island - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-robinson-crusoe--adventures-on-the-cursed-island' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('robinson-crusoe--adventures-on-the-cursed-island')">&times;</span>
+    <h3>Robinson Crusoe: Adventures on the Cursed Island – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-runebound--second-edition" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('runebound--second-edition')">&times;</span> 
-    <h3>Runebound: Second Edition - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-runebound--second-edition' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('runebound--second-edition')">&times;</span>
+    <h3>Runebound: Second Edition – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-sanctuary--the-keepers-era" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('sanctuary--the-keepers-era')">&times;</span> 
-    <h3>Sanctuary: The Keepers Era - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-sanctuary--the-keepers-era' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('sanctuary--the-keepers-era')">&times;</span>
+    <h3>Sanctuary: The Keepers Era – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-sleeping-gods" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('sleeping-gods')">&times;</span> 
-    <h3>Sleeping Gods - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-sleeping-gods' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('sleeping-gods')">&times;</span>
+    <h3>Sleeping Gods – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-small-world" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('small-world')">&times;</span> 
-    <h3>Small World - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-small-world' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('small-world')">&times;</span>
+    <h3>Small World – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-small-world--power-pack-2" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('small-world--power-pack-2')">&times;</span> 
-    <h3>Small World: Power Pack 2 - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-small-world--power-pack-2' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('small-world--power-pack-2')">&times;</span>
+    <h3>Small World: Power Pack 2 – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-solforge-fusion" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('solforge-fusion')">&times;</span> 
-    <h3>SolForge Fusion - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-solforge-fusion' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('solforge-fusion')">&times;</span>
+    <h3>SolForge Fusion – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-splendor" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('splendor')">&times;</span> 
-    <h3>Splendor - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-splendor' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('splendor')">&times;</span>
+    <h3>Splendor – Skrót zasad</h3>
+    <p><b>Jak rozłożyć grę</b><br>– 3 poziomy kart (4 odkryte/poziom), arystokraci (gracze+1), żetony i złoto.</p><p><b>Jak grać</b><br>Wybierz jedno: weź 3 różne żetony / 2 takie same (≥4 w puli) / zarezerwuj kartę (+złoto) / kup kartę. Na koniec tury możesz zdobyć arystokratę.</p><p><b>Koniec</b><br>Po osiągnięciu <b>15 PZ</b> dogrywa się rundę; wygrywa najwięcej PZ.</p>
+  </div>
 </div>
 
 
-<div id="modal-star-realms" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('star-realms')">&times;</span> 
-    <h3>Star Realms - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-star-realms' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('star-realms')">&times;</span>
+    <h3>Star Realms – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-star-wars--destiny" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('star-wars--destiny')">&times;</span> 
-    <h3>Star Wars: Destiny - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-star-wars--destiny' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('star-wars--destiny')">&times;</span>
+    <h3>Star Wars: Destiny – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-star-wars--imperial-assault" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('star-wars--imperial-assault')">&times;</span> 
-    <h3>Star Wars: Imperial Assault - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-star-wars--imperial-assault' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('star-wars--imperial-assault')">&times;</span>
+    <h3>Star Wars: Imperial Assault – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-star-wars--rebellion" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('star-wars--rebellion')">&times;</span> 
-    <h3>Star Wars: Rebellion - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-star-wars--rebellion' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('star-wars--rebellion')">&times;</span>
+    <h3>Star Wars: Rebellion – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-star-wars--unlimited" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('star-wars--unlimited')">&times;</span> 
-    <h3>Star Wars: Unlimited - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-star-wars--unlimited' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('star-wars--unlimited')">&times;</span>
+    <h3>Star Wars: Unlimited – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-t-i-m-e-stories" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('t-i-m-e-stories')">&times;</span> 
-    <h3>T.I.M.E Stories - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-t-i-m-e-stories' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('t-i-m-e-stories')">&times;</span>
+    <h3>T.I.M.E Stories – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-talisman--revised-4th-edition--the-dungeon-expansion" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('talisman--revised-4th-edition--the-dungeon-expansion')">&times;</span> 
-    <h3>Talisman (Revised 4th Edition): The Dungeon Expansion - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-talisman--revised-4th-edition--the-dungeon-expansion' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('talisman--revised-4th-edition--the-dungeon-expansion')">&times;</span>
+    <h3>Talisman (Revised 4th Edition): The Dungeon Expansion – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-talisman--revised-4th-edition--the-highland-expansion" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('talisman--revised-4th-edition--the-highland-expansion')">&times;</span> 
-    <h3>Talisman (Revised 4th Edition): The Highland Expansion - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-talisman--revised-4th-edition--the-highland-expansion' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('talisman--revised-4th-edition--the-highland-expansion')">&times;</span>
+    <h3>Talisman (Revised 4th Edition): The Highland Expansion – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-talisman--revised-4th-edition--the-reaper-expansion" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('talisman--revised-4th-edition--the-reaper-expansion')">&times;</span> 
-    <h3>Talisman (Revised 4th Edition): The Reaper Expansion - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-talisman--revised-4th-edition--the-reaper-expansion' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('talisman--revised-4th-edition--the-reaper-expansion')">&times;</span>
+    <h3>Talisman (Revised 4th Edition): The Reaper Expansion – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-talisman--revised-4th-edition" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('talisman--revised-4th-edition')">&times;</span> 
-    <h3>Talisman: Revised 4th Edition - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-talisman--revised-4th-edition' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('talisman--revised-4th-edition')">&times;</span>
+    <h3>Talisman: Revised 4th Edition – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-tapestry" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('tapestry')">&times;</span> 
-    <h3>Tapestry - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-tapestry' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('tapestry')">&times;</span>
+    <h3>Tapestry – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-terraforming-mars--the-dice-game" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('terraforming-mars--the-dice-game')">&times;</span> 
-    <h3>Terraforming Mars: The Dice Game - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-terraforming-mars--the-dice-game' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('terraforming-mars--the-dice-game')">&times;</span>
+    <h3>Terraforming Mars: The Dice Game – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-terrors-of-london" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('terrors-of-london')">&times;</span> 
-    <h3>Terrors of London - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-terrors-of-london' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('terrors-of-london')">&times;</span>
+    <h3>Terrors of London – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-terrors-of-london--servants-of-the-black-gate" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('terrors-of-london--servants-of-the-black-gate')">&times;</span> 
-    <h3>Terrors of London: Servants of the Black Gate - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-terrors-of-london--servants-of-the-black-gate' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('terrors-of-london--servants-of-the-black-gate')">&times;</span>
+    <h3>Terrors of London: Servants of the Black Gate – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-terrors-of-london--the-reptile-tomb" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('terrors-of-london--the-reptile-tomb')">&times;</span> 
-    <h3>Terrors of London: The Reptile Tomb - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-terrors-of-london--the-reptile-tomb' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('terrors-of-london--the-reptile-tomb')">&times;</span>
+    <h3>Terrors of London: The Reptile Tomb – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-through-the-ages--a-new-story-of-civilization" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('through-the-ages--a-new-story-of-civilization')">&times;</span> 
-    <h3>Through the Ages: A New Story of Civilization - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-through-the-ages--a-new-story-of-civilization' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('through-the-ages--a-new-story-of-civilization')">&times;</span>
+    <h3>Through the Ages: A New Story of Civilization – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-thunderstone-advance--worlds-collide" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('thunderstone-advance--worlds-collide')">&times;</span> 
-    <h3>Thunderstone Advance: Worlds Collide - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-thunderstone-advance--worlds-collide' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('thunderstone-advance--worlds-collide')">&times;</span>
+    <h3>Thunderstone Advance: Worlds Collide – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-ticket-to-ride--europe" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('ticket-to-ride--europe')">&times;</span> 
-    <h3>Ticket to Ride: Europe - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-ticket-to-ride--europe' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('ticket-to-ride--europe')">&times;</span>
+    <h3>Ticket to Ride: Europe – Skrót zasad</h3>
+    <p><b>Jak rozłożyć grę</b><br>– 4 karty wagonów; 1 długa + 3 krótkie trasy (zostaw ≥2); pięć odkrytych kart; pociągi i stacje gotowe.</p><p><b>Jak grać</b><br>Dobierz karty wagonów / zajmij trasę (tunele=możliwa dopłata; promy=lokomotywy) / dobierz trasy / postaw stację.</p><p><b>Koniec</b><br>Gdy komuś zostaną ≤2 pociągi: ostatnia runda. Punkty: trasy, bilety (niespełnione minus), najdłuższa ścieżka.</p>
+  </div>
 </div>
 
 
-<div id="modal-timeline--polska" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('timeline--polska')">&times;</span> 
-    <h3>Timeline: Polska - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-timeline--polska' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('timeline--polska')">&times;</span>
+    <h3>Timeline: Polska – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-unmatched--for-king-and-country" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('unmatched--for-king-and-country')">&times;</span> 
-    <h3>Unmatched: For King and Country - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-unmatched--for-king-and-country' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('unmatched--for-king-and-country')">&times;</span>
+    <h3>Unmatched: For King and Country – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-warhammer--invasion" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('warhammer--invasion')">&times;</span> 
-    <h3>Warhammer: Invasion - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-warhammer--invasion' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('warhammer--invasion')">&times;</span>
+    <h3>Warhammer: Invasion – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-yamata-" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('yamata-')">&times;</span> 
-    <h3>Yamataï - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-yamata-' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('yamata-')">&times;</span>
+    <h3>Yamataï – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 
-<div id="modal-zombicide" class="modal"> 
-  <div class="modal-content"> 
-    <span class="close" onclick="closeModal('zombicide')">&times;</span> 
-    <h3>Zombicide - Skrót zasad</h3> 
-    <p>Brak danych – uzupełnij ręcznie.</p> 
-  </div> 
+<div id='modal-zombicide' class='modal'>
+  <div class='modal-content'>
+    <span class='close' onclick="closeModal('zombicide')">&times;</span>
+    <h3>Zombicide – Skrót zasad</h3>
+    <p>Brak danych – uzupełnij ręcznie.</p>
+  </div>
 </div>
 
 <script>
-function openModal(game) {
-  document.getElementById('modal-' + game).style.display = 'block';
-}
-
-function closeModal(game) {
-  document.getElementById('modal-' + game).style.display = 'none';
-}
-
-// Zamknięcie kliknięciem poza okno modal
-window.onclick = function(event) {
-  if(event.target.classList.contains('modal')) {
-    event.target.style.display = 'none';
-  }
-}
+function openModal(id){document.getElementById('modal-'+id).style.display='block';}
+function closeModal(id){document.getElementById('modal-'+id).style.display='none';}
+window.onclick=function(e){if(e.target.classList&&e.target.classList.contains('modal')) e.target.style.display='none';}
 </script>
 </body>
 </html>
