@@ -25,7 +25,6 @@ h1 {
   background: white;
   border-radius: 10px;
   padding: 10px;
-  cursor: pointer;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   text-align: center;
 }
@@ -56,6 +55,42 @@ button {
 button:hover {
   background: #0056b3;
 }
+
+/* Popup modal */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.5); 
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto; 
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+}
 </style>
 </head>
 
@@ -67,29 +102,63 @@ button:hover {
 
   <!-- GRA 1 -->
   <div class="card">
-    <img src="https://cf.geekdo-images.com/0XODRpReiZBFUffEcqT5-Q__itemrep/img/6Jf5G-bSvdOIMUSwxsJfZXl29B8=/fit-in/246x300/filters:strip_icc()/pic9156909.png">
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/b0/Catan-2015-boxart.jpg">
     <h3>Catan</h3>
     <div class="details">
       👥 Gracze: 3–4<br>
       ⏱️ Czas: 60–90 min<br>
       🎂 Wiek: 10+
     </div>
-    <button onclick="window.open('https://example.com/catan-instructions', '_blank')">Skrót zasad</button>
+    <button onclick="openModal('catan')">Skrót zasad</button>
   </div>
 
   <!-- GRA 2 -->
   <div class="card">
-    <img src="https://cf.geekdo-images.com/peUgu3A20LRmAXAMyDQfpQ__itemrep/img/6TWoEvnQQe_sO--6WLd_PQOnEQg=/fit-in/246x300/filters:strip_icc()/pic8621446.jpg">
+    <img src="https://upload.wikimedia.org/wikipedia/en/7/70/Carcassonne-game.jpg">
     <h3>Carcassonne</h3>
     <div class="details">
       👥 Gracze: 2–5<br>
       ⏱️ Czas: 30–45 min<br>
       🎂 Wiek: 7+
     </div>
-    <button onclick="window.open('https://example.com/carcassonne-instructions', '_blank')">Skrót zasad</button>
+    <button onclick="openModal('carcassonne')">Skrót zasad</button>
   </div>
 
 </div>
+
+<!-- Modale -->
+<div id="modal-catan" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('catan')">&times;</span>
+    <h3>Catan - Skrót zasad</h3>
+    <p>Buduj osady, zbieraj surowce i handluj.</p>
+  </div>
+</div>
+
+<div id="modal-carcassonne" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('carcassonne')">&times;</span>
+    <h3>Carcassonne - Skrót zasad</h3>
+    <p>Układaj kafelki i zdobywaj punkty.</p>
+  </div>
+</div>
+
+<script>
+function openModal(game) {
+  document.getElementById('modal-' + game).style.display = 'block';
+}
+
+function closeModal(game) {
+  document.getElementById('modal-' + game).style.display = 'none';
+}
+
+// Zamknięcie kliknięciem poza okno modal
+window.onclick = function(event) {
+  if(event.target.classList.contains('modal')) {
+    event.target.style.display = 'none';
+  }
+}
+</script>
 
 </body>
 </html>
